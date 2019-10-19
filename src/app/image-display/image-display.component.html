@@ -1,5 +1,4 @@
-<p>image-display works!</p>
-<main [ngStyle]="{'grid-template': gridtemplate}">
-    <div *ngFor="let image of images" >{{image.name}}</div>
+<main [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
+    <img class="imagecontainer" *ngFor="let image of images"  [src]="image.imageData.value"/>
 </main>
 

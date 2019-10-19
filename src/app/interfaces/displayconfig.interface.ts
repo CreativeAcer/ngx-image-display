@@ -1,4 +1,5 @@
 export interface DisplayConfig {
-    rows: number;
+    // rows: number;
     columns: number;
+    width: string;
 }

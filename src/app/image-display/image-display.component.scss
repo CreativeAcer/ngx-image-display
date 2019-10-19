@@ -1,3 +1,17 @@
 main{
+    box-sizing: border-box;
     display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+    // width: 100%;
+    // height: 100%;
+
+    .imagecontainer {
+        // width: 200px;
+        // height: 200px;
+    }
+}
+
+main img {
+    width: 100%;
 }
