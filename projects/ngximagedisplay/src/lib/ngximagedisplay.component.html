@@ -1,10 +1,10 @@
 <div class="bodymain" *ngIf="displayconfig">
   <div class="imageDiv" [ngStyle]="{'width': containerwidth, 'height': containerheight}">
-    <main  [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
-      <img (click)='imageSelected(image)' class="imagecontainer" *ngFor="let image of images; let i = index" [src]="image.imageData.value" 
+    <main [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
+      <img (click)='imageSelected(image)' class="imagecontainer" *ngFor="let image of images; let i = index"
+        [src]="image.imageData.value"
         [ngStyle]="{'transform': hovering==i  ? zoomlvl : 'scale(1)', 'z-index': hovering==i  ? '999' : 'initial' }"
-        (mouseenter)="mouseenter(image, i)"
-        (mouseleave)="mouseleave(image, i)"/>
+        (mouseenter)="mouseenter(i)" (mouseleave)="mouseleave()" />
     </main>
   </div>
 </div>

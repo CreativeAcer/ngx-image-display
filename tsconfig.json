@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngximagedisplay": [
+        "dist/ngximagedisplay"
+      ],
+      "ngximagedisplay/*": [
+        "dist/ngximagedisplay/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -1,6 +1,5 @@
-import { Component, OnInit, Input, Renderer2, Output, EventEmitter } from '@angular/core';
-import { DisplayConfig } from '../interfaces/displayconfig.interface';
-import { image } from '../interfaces/image.interface';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { image, DisplayConfig} from '../interfaces/ngximagedisplay.interface';
 
 enum zoomlevel {
   small = '1.2',
@@ -10,11 +9,10 @@ enum zoomlevel {
 
 @Component({
   selector: 'ngx-image-display',
-  templateUrl: './image-display.component.html',
-  styleUrls: ['./image-display.component.scss']
+  templateUrl: './ngximagedisplay.component.html',
+  styleUrls: ['./ngximagedisplay.component.scss']
 })
-
-export class ImageDisplayComponent implements OnInit {
+export class NgximagedisplayComponent implements OnInit {
   containerwidth: string;
   containerheight: string;
   gridcolumns: string;
@@ -22,30 +20,27 @@ export class ImageDisplayComponent implements OnInit {
   hovering: number;
   zoomlvl: string;
 
-  
-  
   /**
    * Default configuration
    */
-    defaultdisplayconfig = {
-      columns: 4,
-      zoomonhover: false,
-      zoomlevel: 'small',
-      imageminwidth: '300px',
-      containerwidth: '1200px',
-      containerheight: '950px'
-    };
-   /**
-    * END Default configuration
-    */
+  defaultdisplayconfig = {
+    columns: 4,
+    zoomonhover: false,
+    zoomlevel: 'small',
+    imageminwidth: '300px',
+    containerwidth: '1200px',
+    containerheight: '950px'
+  };
+ /**
+  * END Default configuration
+  */
 
-  @Input() images: Array<image>;
-  @Input() displayconfig: DisplayConfig;
+ @Input() images: Array<image>;
+ @Input() displayconfig: DisplayConfig;
 
-  @Output() onImageSelected = new EventEmitter<image>();
+ @Output() onImageSelected = new EventEmitter<image>();
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit() {
     if(this.displayconfig && this.displayconfig.containerwidth) {

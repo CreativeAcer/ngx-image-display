@@ -124,6 +124,41 @@
           }
         }
       }
+    },
+    "ngximagedisplay": {
+      "projectType": "library",
+      "root": "projects/ngximagedisplay",
+      "sourceRoot": "projects/ngximagedisplay/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngximagedisplay/tsconfig.lib.json",
+            "project": "projects/ngximagedisplay/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngximagedisplay/src/test.ts",
+            "tsConfig": "projects/ngximagedisplay/tsconfig.spec.json",
+            "karmaConfig": "projects/ngximagedisplay/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngximagedisplay/tsconfig.lib.json",
+              "projects/ngximagedisplay/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ngx-image-display"
 }
