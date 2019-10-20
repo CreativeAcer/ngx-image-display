@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { DisplayConfig } from './interfaces/displayconfig.interface';
 import { image } from './interfaces/image.interface';
+import { ImageService } from './service/image.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -8,26 +10,32 @@ import { image } from './interfaces/image.interface';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy{
+  
+  imagesub: Subscription;
   images: Array<image> = [];
   displayconfig: DisplayConfig;
 
-  constructor(){
-    for(let i = 0; i < 10; i++){
-      this.images.push(
-        {
-          type: 'url',
-          imageData: {
-            value: 'https://www.audubon.org/sites/default/files/a1_1902_16_barred-owl_sandra_rothenberg_kk.jpg',
-          }
-        }
-      )
-    }
+  constructor(private imageservice: ImageService){
+    this.imagesub = this.imageservice.getImages().subscribe((images) => {
+      this.images = images;
+    });
     this.displayconfig = {
-      // rows: 2,
       columns: 4,
-      width: '300px'
+      imageminwidth: '300px',
+      zoomonhover: false,
+      zoomlevel: 'small',
+      containerwidth: '1000px',
+      //containerheight: '600px'
     };
+  }
+
+  logImage(image){
+    console.log(image);
+  }
+
+  ngOnDestroy(): void {
+    this.imagesub.unsubscribe();
   }
   
 }

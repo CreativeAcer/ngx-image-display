@@ -1,5 +1,3 @@
-<div class="bodymain">
-    <ngx-image-display [images]="images" [displayconfig]="displayconfig"></ngx-image-display>
-</div>
+<ngx-image-display [images]="images" [displayconfig]="displayconfig" (onImageSelected)="logImage($event)"></ngx-image-display>
 
 
