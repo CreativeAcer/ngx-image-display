@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
+    "outDir": "dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngximagedisplay": [
+        "dist/ngximagedisplay"
+      ],
+      "ngximagedisplay/*": [
+        "dist/ngximagedisplay/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

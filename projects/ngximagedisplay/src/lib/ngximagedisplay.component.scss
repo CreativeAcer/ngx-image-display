@@ -1,0 +1,27 @@
+.bodymain {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .imageDiv{
+        overflow: auto;
+    }
+}
+
+main{
+    box-sizing: border-box;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+
+    .imagecontainer {
+        transition: transform .5s ease;
+    }
+
+    img {
+        display: flex;
+        align-self: center;
+        width: 100%;
+    }
+
+}
