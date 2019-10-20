@@ -1,6 +1,6 @@
 # NgxImageDisplay
 
-Badges will be updated
+[![npm version](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display.svg)](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display)
 
 ## About
 This project can be used to display images on a page.  
@@ -30,7 +30,7 @@ onImageSelected | This will emit the image that has been selected when a user cl
 To install this library, run:
 
 ```bash
-$ npm install ngx-image-display --save
+$ npm install @creativeacer/ngx-image-display --save
 ```
 
 ## Using this library
@@ -44,7 +44,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import the library
-import { NgxImageDisplayModule } from '@CreativeAcer/ngx-image-display';
+import { NgxImageDisplayModule } from '@creativeacer/ngx-image-display';
 
 @NgModule({
   declarations: [
@@ -129,4 +129,14 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ### Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+### Creating Library
+Run ng g library libname
+
+### Build npm package
+ng build ngximagedisplay
+
+### publish
+npm login   
+npm publish --access public
 
