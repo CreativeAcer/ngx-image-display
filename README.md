@@ -6,6 +6,9 @@
 This project can be used to display images on a page.  
 The following settings are available  
 
+#### Demo  
+[ngx-image-viewer](https://stackblitz.com/edit/ngx-image-viewer)
+
 ## Settings
   
 Option | Default&#160;value | Description
