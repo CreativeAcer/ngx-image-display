@@ -21,12 +21,12 @@ export class AppComponent implements OnDestroy{
       this.images = images;
     });
     this.displayconfig = {
-      columns: 4,
+      columns: 2,
       imageminwidth: '300px',
       zoomonhover: false,
       zoomlevel: 'small',
       containerwidth: '1000px',
-      //containerheight: '600px'
+      containerheight: '600px'
     };
   }
 

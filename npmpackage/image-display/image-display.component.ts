@@ -48,22 +48,9 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(this.displayconfig && this.displayconfig.containerwidth) {
-      this.containerwidth = this.displayconfig.containerwidth;
-    }
-    if(this.displayconfig && this.displayconfig.containerheight) {
-      this.containerheight = this.displayconfig.containerheight;
-    }
-    if(this.displayconfig && this.displayconfig.imageminwidth && this.displayconfig.columns) {
-      this.gridcolumns = 'repeat('+this.displayconfig.columns+', minmax('+this.displayconfig.imageminwidth+', 1fr))';
-    } else if(this.displayconfig && this.displayconfig.imageminwidth){
-      this.gridcolumns = 'repeat(auto-fit, minmax('+this.displayconfig.imageminwidth+', 1fr))';
-    } else {
-      this.gridcolumns = 'repeat(auto-fit, minmax(300px, 1fr))';
-    }
-    
-    
-    
+    this.containerwidth = this.displayconfig.containerwidth;
+    this.containerheight = this.displayconfig.containerheight;
+    this.gridcolumns = 'repeat(auto-fit, minmax('+this.displayconfig.imageminwidth+', 1fr))';
     //this.gridrows = 'repeat(auto-fit, minmax('+this.displayconfig.rowheight+', 1fr))';
 
     if(this.displayconfig.zoomonhover && this.displayconfig.zoomlevel){
