@@ -71,23 +71,34 @@ Once the library is imported, you can use its component in your Angular applicat
 ```  
 
 ### Interfaces
-
-DisplayConfig  
+```typescript
+DisplayConfig {
     columns: number;
     imageminwidth: string;  
     zoomonhover?: boolean;  
     zoomlevel?: 'small' | 'medium' | 'large';  
     containerwidth?: string;  
     containerheight?: string;  
-    onclick?: Function;  
-Image  
+    onclick?: Function;
+}
+``` 
+```typescript
+Image  {
     type: 'base64' | 'url';  
-    imageData: baseImage | urlImage;  
-baseImage ( to be implemented )  
+    imageData: baseImage | urlImage; 
+} 
+``` 
+```typescript
+baseImage ( to be implemented )  {
     value: string;  
     extension: 'jpg' | 'jpeg' | 'png' | 'svg';  
-urlImage  
+}
+``` 
+```typescript
+urlImage  {
     value: string;  
+}
+``` 
 
 
 ## Future development information
