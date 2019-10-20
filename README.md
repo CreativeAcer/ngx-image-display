@@ -14,8 +14,8 @@ columns | Auto-fit | This wil set the amount of columns to display with images. 
 imageminwidth | 300px | This is the minimum resolution for an image, if the containing div is 700px 2 images can be shown, if it's 500px only one image will be show ( next to each other).
 zoomonhover | false | This will enable or disable the hover effect when the mouse hovers over an image.
 zoomlevel | 'small' | This will set the amount of zoom that will occur if the zoomonhover is set to true. Possible settings: 'small' - 'medium' - 'large'
-containerwidth | *none* | Set the width for the image display container.
-containerheight | *none* | Set the height for the image display container.
+containerwidth | 100% | Set the width for the image display container.
+containerheight | 100% | Set the height for the image display container.
 
 ## Available output
 
@@ -73,8 +73,8 @@ Once the library is imported, you can use its component in your Angular applicat
 ### Interfaces
 ```typescript
 DisplayConfig {
-    columns: number;
-    imageminwidth: string;  
+    columns?: number;
+    imageminwidth?: string;  
     zoomonhover?: boolean;  
     zoomlevel?: 'small' | 'medium' | 'large';  
     containerwidth?: string;  
@@ -99,6 +99,11 @@ urlImage  {
     value: string;  
 }
 ``` 
+
+## Default Settings
+  
+If no Display configuration is provided the default settings will be used.  
+
 
 
 ## Future development information
