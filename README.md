@@ -74,17 +74,17 @@ Once the library is imported, you can use its component in your Angular applicat
 
 Interface&#160;name | Layout
 :---:|---
-DisplayConfig | columns: number;  
-    imageminwidth: string;  
-    zoomonhover?: boolean;  
-    zoomlevel?: 'small' | 'medium' | 'large';  
-    containerwidth?: string;  
-    containerheight?: string;  
-    onclick?: Function;  
-Image | type: 'base64' | 'url';  
+DisplayConfig | columns: number;
+    imageminwidth: string;
+    zoomonhover?: boolean;
+    zoomlevel?: 'small' | 'medium' | 'large';
+    containerwidth?: string;
+    containerheight?: string;
+    onclick?: Function;
+Image | type: 'base64' | 'url';
     imageData: baseImage | urlImage;
-baseImage ( to be implemented ) |  value: string;  
-    extension: 'jpg' | 'jpeg' | 'png' | 'svg';  
+baseImage ( to be implemented ) |  value: string;
+    extension: 'jpg' | 'jpeg' | 'png' | 'svg';
 urlImage | value: string;
 
 
