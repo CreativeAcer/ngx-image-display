@@ -30,7 +30,7 @@ onImageSelected | This will emit the image that has been selected when a user cl
 To install this library, run:
 
 ```bash
-$ npm install ngx-image-zoom --save
+$ npm install ngx-image-display --save
 ```
 
 ## Using this library
