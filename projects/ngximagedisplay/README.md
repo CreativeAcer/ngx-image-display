@@ -1,5 +1,7 @@
 # NgxImageDisplay
 
+Responsive image container
+
 [![npm version](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display.svg)](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display)
 
 ## About
