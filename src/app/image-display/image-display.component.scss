@@ -11,8 +11,8 @@
 main{
     box-sizing: border-box;
     display: grid;
-    column-gap: 10px;
-    row-gap: 10px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 
     .imagecontainer {
         transition: transform .5s ease;
