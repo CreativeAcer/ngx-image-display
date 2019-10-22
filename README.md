@@ -8,8 +8,12 @@ Responsive image container
 This project can be used to display images on a page.  
 The following settings are available  
 
-#### Demo  
+### Demo ( open code )  
+
 [ngx-image-viewer](https://stackblitz.com/edit/ngx-image-viewer)
+
+### Fullscreen demo ( live )
+[ngx-image-viewer](https://ngx-image-viewer.stackblitz.io/)
 
 ## Settings
   
