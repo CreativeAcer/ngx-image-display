@@ -143,10 +143,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 Run ng g library libname
 
 ### Build npm package  
-go to project folder  
+from root   
 ng build ngximagedisplay
 
 ### publish
 npm login   
+cd to dist/ngximagedisplay folder
 npm publish --access public
 
