@@ -1,10 +1,10 @@
 {
   "name": "@creativeacer/ngx-image-display",
   "author": {
-    "name":"Marco Moris"
+    "name": "Marco Moris"
   },
   "license": "LGPL-3.0",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
