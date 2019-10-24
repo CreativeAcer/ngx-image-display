@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { image, DisplayConfig} from '../interfaces/ngximagedisplay.interface';
+import { image, DisplayConfig, samesizeConfig} from '../interfaces/ngximagedisplay.interface';
 
 enum zoomlevel {
   small = '1.2',
@@ -36,6 +36,7 @@ export class NgximagedisplayComponent implements OnInit {
   */
 
  @Input() images: Array<image>;
+ @Input() sameSize: samesizeConfig;
  @Input() displayconfig: DisplayConfig;
 
  @Output() onImageSelected = new EventEmitter<image>();
@@ -77,6 +78,13 @@ export class NgximagedisplayComponent implements OnInit {
       }
     }else if(this.displayconfig.zoomonhover) {
       this.zoomlvl = 'scale('+zoomlevel.small+')';
+    }
+
+    if(!this.sameSize){
+      this.sameSize = {
+        active: false,
+        imgContainerHeight: '300px'
+      }
     }
     
 

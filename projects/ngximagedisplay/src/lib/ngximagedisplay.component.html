@@ -1,10 +1,17 @@
 <div class="bodymain" *ngIf="displayconfig">
   <div class="imageDiv" [ngStyle]="{'width': containerwidth, 'height': containerheight}">
-    <main [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
-      <img (click)='imageSelected(image)' class="imagecontainer" *ngFor="let image of images; let i = index"
-        [src]="image.imageData.value"
+    <main *ngIf="!sameSize.active"  [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
+      <img  (click)='imageSelected(image)' class="imagecontainer" *ngFor="let image of images; let i = index" [src]="image.imageData.value" 
         [ngStyle]="{'transform': hovering==i  ? zoomlvl : 'scale(1)', 'z-index': hovering==i  ? '999' : 'initial' }"
-        (mouseenter)="mouseenter(i)" (mouseleave)="mouseleave()" />
+        (mouseenter)="mouseenter(i)"
+        (mouseleave)="mouseleave()"/>
+    </main>
+    <main *ngIf="sameSize.active"  [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
+      <div class="img imagecontainer" (click)='imageSelected(image)' *ngFor="let image of images; let i = index" 
+        [ngStyle]="{'transform': hovering==i  ? zoomlvl : 'scale(1)', 'z-index': hovering==i  ? '999' : 'initial', 
+        'background-image':' url(' + image.imageData.value + ')', 'min-height': sameSize.imgContainerHeight}"
+        (mouseenter)="mouseenter(i)"
+        (mouseleave)="mouseleave()"></div>
     </main>
   </div>
 </div>
