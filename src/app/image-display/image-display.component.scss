@@ -24,4 +24,13 @@ main{
         width: 100%;
     }
 
+    .img {
+        display: flex;
+        align-self: center;
+        width: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
 }
