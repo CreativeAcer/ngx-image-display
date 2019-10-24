@@ -24,3 +24,8 @@ export interface image {
     type: 'base64' | 'url';
     imageData: baseImage | urlImage;
 }
+
+export interface samesizeConfig {
+    active: boolean;
+    imgContainerHeight: string;
+}
