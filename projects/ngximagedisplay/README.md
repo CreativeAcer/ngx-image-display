@@ -8,11 +8,14 @@ Responsive image container
 This project can be used to display images on a page.  
 The following settings are available  
 
-#### Demo  
+### Demo ( open code )  
+
 [ngx-image-viewer](https://stackblitz.com/edit/ngx-image-viewer)
 
+### Fullscreen demo ( live )
+[ngx-image-viewer](https://ngx-image-viewer.stackblitz.io/)
 
-## Settings
+## Settings  
   
 Option | Default&#160;value | Description
 :---:|:---:|---
@@ -21,7 +24,15 @@ imageminwidth | 300px | This is the minimum resolution for an image, if the cont
 zoomonhover | false | This will enable or disable the hover effect when the mouse hovers over an image.
 zoomlevel | 'small' | This will set the amount of zoom that will occur if the zoomonhover is set to true. Possible settings: 'small' - 'medium' - 'large'
 containerwidth | 100% | Set the width for the image display container.
-containerheight | 100% | Set the height for the image display container.
+containerheight | 100% | Set the height for the image display container.  
+
+You can set all images to be the same size in the display by setting the samesizeConfig.active to true.  
+  
+  Option | Default&#160;value | Description
+:---:|:---:|---
+active | false | This will set all images in the display to the same height if true.
+imgContainerHeight | *required if active = true* | This will be the height all images will have if the samesize image active parameter has been set to true.
+
 
 ## Available output
 
@@ -73,7 +84,7 @@ Once the library is imported, you can use its component in your Angular applicat
 <h1>
   {{title}}
 </h1>
-<ngx-image-display [images]="images" [displayconfig]="displayconfig" (onImageSelected)="logImage($event)"></ngx-image-display>
+<ngx-image-display [images]="images" [sameSize]="samesizeConfig" [displayconfig]="displayconfig" (onImageSelected)="logImage($event)"></ngx-image-display>
 ```  
 
 ### Interfaces
@@ -89,25 +100,32 @@ DisplayConfig {
 }
 ``` 
 ```typescript
+samesizeConfig {
+  active: boolean;
+  imgContainerHeight: string;
+}
+```  
+```typescript
 Image  {
     type: 'base64' | 'url';  
     imageData: baseImage | urlImage; 
 } 
-``` 
+```  
 ```typescript
 baseImage ( to be implemented )  {
     value: string;  
     extension: 'jpg' | 'jpeg' | 'png' | 'svg';  
 }
-``` 
+```  
 ```typescript
 urlImage  {
     value: string;  
 }
-``` 
+```  
 
 ## Default Settings
   
 If no Display configuration is provided the default settings will be used.  
+
 
 
