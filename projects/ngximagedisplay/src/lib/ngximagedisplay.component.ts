@@ -44,62 +44,62 @@ export class NgximagedisplayComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if(this.displayconfig && this.displayconfig.containerwidth) {
+    if (this.displayconfig && this.displayconfig.containerwidth) {
       this.containerwidth = this.displayconfig.containerwidth;
     }
-    if(this.displayconfig && this.displayconfig.containerheight) {
+    if (this.displayconfig && this.displayconfig.containerheight) {
       this.containerheight = this.displayconfig.containerheight;
     }
-    if(this.displayconfig && this.displayconfig.imageminwidth && this.displayconfig.columns) {
-      this.gridcolumns = 'repeat('+this.displayconfig.columns+', minmax('+this.displayconfig.imageminwidth+', 1fr))';
-    } else if(this.displayconfig && this.displayconfig.imageminwidth){
-      this.gridcolumns = 'repeat(auto-fit, minmax('+this.displayconfig.imageminwidth+', 1fr))';
+    if (this.displayconfig && this.displayconfig.imageminwidth && this.displayconfig.columns) {
+      this.gridcolumns = 'repeat(' + this.displayconfig.columns + ', minmax(' + this.displayconfig.imageminwidth + ', 1fr))';
+    } else if (this.displayconfig && this.displayconfig.imageminwidth) {
+      this.gridcolumns = 'repeat(auto-fit, minmax(' + this.displayconfig.imageminwidth + ', 1fr))';
     } else {
       this.gridcolumns = 'repeat(auto-fit, minmax(300px, 1fr))';
     }
-    
-    
-    
-    //this.gridrows = 'repeat(auto-fit, minmax('+this.displayconfig.rowheight+', 1fr))';
 
-    if(this.displayconfig.zoomonhover && this.displayconfig.zoomlevel){
-      switch(this.displayconfig.zoomlevel){
+
+
+    // this.gridrows = 'repeat(auto-fit, minmax('+this.displayconfig.rowheight+', 1fr))';
+
+    if (this.displayconfig.zoomonhover && this.displayconfig.zoomlevel) {
+      switch (this.displayconfig.zoomlevel) {
         case 'small':
-          this.zoomlvl = 'scale('+zoomlevel.small+')';
+          this.zoomlvl = 'scale(' + zoomlevel.small + ')';
           break;
         case 'medium':
-          this.zoomlvl = 'scale('+zoomlevel.medium+')';
+          this.zoomlvl = 'scale(' + zoomlevel.medium + ')';
           break;
         case 'large':
-          this.zoomlvl = 'scale('+zoomlevel.large+')';
+          this.zoomlvl = 'scale(' + zoomlevel.large + ')';
           break;
         default:
           break;
       }
-    }else if(this.displayconfig.zoomonhover) {
-      this.zoomlvl = 'scale('+zoomlevel.small+')';
+    } else if (this.displayconfig.zoomonhover) {
+      this.zoomlvl = 'scale(' + zoomlevel.small + ')';
     }
 
-    if(!this.sameSize){
+    if (!this.sameSize) {
       this.sameSize = {
         active: false,
         imgContainerHeight: '300px'
-      }
+      };
     }
-    
+
 
   }
 
-  mouseenter(itemIndex){
-    if(this.displayconfig.zoomonhover){
+  mouseenter(itemIndex) {
+    if (this.displayconfig.zoomonhover) {
       this.hovering = itemIndex;
     }
   }
-  mouseleave(){
+  mouseleave() {
     this.hovering = -1;
   }
 
-  imageSelected(img: image){
+  imageSelected(img: image) {
     this.onImageSelected.emit(img);
   }
 
