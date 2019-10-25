@@ -36,8 +36,8 @@ export class AppComponent implements OnDestroy{
     }
   }
 
-  logImage(image){
-    console.log(image);
+  logImage(img){
+    console.log(img);
   }
 
   ngOnDestroy(): void {
