@@ -99,8 +99,8 @@ export class NgximagedisplayComponent implements OnInit {
     this.hovering = -1;
   }
 
-  imageSelected(image: image){
-    this.onImageSelected.emit(image);
+  imageSelected(img: image){
+    this.onImageSelected.emit(img);
   }
 
 }
