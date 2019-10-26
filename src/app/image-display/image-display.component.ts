@@ -28,7 +28,7 @@ export class ImageDisplayComponent implements OnInit {
   /**
    * Default configuration
    */
-    defaultdisplayconfig : DisplayConfig = {
+    defaultdisplayconfig: DisplayConfig = {
       imageminwidth: '250px',
       zoomonhover: false,
       zoomlevel: 'small',
@@ -49,7 +49,7 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(!this.displayconfig){
+    if (!this.displayconfig) {
       this.displayconfig = this.defaultdisplayconfig;
     }
     // this.gridrows = 'repeat(auto-fit, minmax('+this.displayconfig.rowheight+', 1fr))';
@@ -60,7 +60,7 @@ export class ImageDisplayComponent implements OnInit {
     this.setSameSize();
   }
 
-  setContainer() : void {
+  setContainer(): void {
     if (this.displayconfig && this.displayconfig.containerwidth) {
       this.containerwidth = this.displayconfig.containerwidth;
     }
@@ -69,7 +69,7 @@ export class ImageDisplayComponent implements OnInit {
     }
   }
 
-  setContainerLayout() : void {
+  setContainerLayout(): void {
     if (this.displayconfig && this.displayconfig.imageminwidth && this.displayconfig.columns) {
       this.gridcolumns = 'repeat(' + this.displayconfig.columns + ', minmax(' + this.displayconfig.imageminwidth + ', 1fr))';
     } else if (this.displayconfig && this.displayconfig.imageminwidth) {
@@ -79,7 +79,7 @@ export class ImageDisplayComponent implements OnInit {
     }
   }
 
-  setZoom() : void {
+  setZoom(): void {
     if (this.displayconfig.zoomonhover && this.displayconfig.zoomlevel) {
       switch (this.displayconfig.zoomlevel) {
         case 'small':
@@ -99,7 +99,7 @@ export class ImageDisplayComponent implements OnInit {
     }
   }
 
-  setSameSize() :void {
+  setSameSize(): void {
     if (!this.sameSize) {
       this.sameSize = {
         active: false,
