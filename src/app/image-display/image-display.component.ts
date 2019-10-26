@@ -28,13 +28,12 @@ export class ImageDisplayComponent implements OnInit {
   /**
    * Default configuration
    */
-    defaultdisplayconfig = {
-      columns: 4,
+    defaultdisplayconfig : DisplayConfig = {
+      imageminwidth: '250px',
       zoomonhover: false,
       zoomlevel: 'small',
-      imageminwidth: '300px',
-      containerwidth: '1200px',
-      containerheight: '950px'
+      containerwidth: '65%',
+      containerheight: '600px'
     };
    /**
     * END Default configuration
@@ -50,12 +49,27 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(!this.displayconfig){
+      this.displayconfig = this.defaultdisplayconfig;
+    }
+    // this.gridrows = 'repeat(auto-fit, minmax('+this.displayconfig.rowheight+', 1fr))';
+
+    this.setContainerLayout();
+    this.setContainer();
+    this.setZoom();
+    this.setSameSize();
+  }
+
+  setContainer() : void {
     if (this.displayconfig && this.displayconfig.containerwidth) {
       this.containerwidth = this.displayconfig.containerwidth;
     }
     if (this.displayconfig && this.displayconfig.containerheight) {
       this.containerheight = this.displayconfig.containerheight;
     }
+  }
+
+  setContainerLayout() : void {
     if (this.displayconfig && this.displayconfig.imageminwidth && this.displayconfig.columns) {
       this.gridcolumns = 'repeat(' + this.displayconfig.columns + ', minmax(' + this.displayconfig.imageminwidth + ', 1fr))';
     } else if (this.displayconfig && this.displayconfig.imageminwidth) {
@@ -63,11 +77,9 @@ export class ImageDisplayComponent implements OnInit {
     } else {
       this.gridcolumns = 'repeat(auto-fit, minmax(300px, 1fr))';
     }
+  }
 
-
-
-    // this.gridrows = 'repeat(auto-fit, minmax('+this.displayconfig.rowheight+', 1fr))';
-
+  setZoom() : void {
     if (this.displayconfig.zoomonhover && this.displayconfig.zoomlevel) {
       switch (this.displayconfig.zoomlevel) {
         case 'small':
@@ -85,15 +97,15 @@ export class ImageDisplayComponent implements OnInit {
     } else if (this.displayconfig.zoomonhover) {
       this.zoomlvl = 'scale(' + zoomlevel.small + ')';
     }
+  }
 
+  setSameSize() :void {
     if (!this.sameSize) {
       this.sameSize = {
         active: false,
         imgContainerHeight: '300px'
       };
     }
-
-
   }
 
   mouseenter(itemIndex) {
