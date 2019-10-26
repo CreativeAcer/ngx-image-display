@@ -1,4 +1,4 @@
-<div class="bodymain" *ngIf="displayconfig">
+<div class="bodymain">
   <div class="imageDiv" [ngStyle]="{'width': containerwidth, 'height': containerheight}">
     <main *ngIf="!sameSize.active"  [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
       <img  (click)='imageSelected(image)' class="imagecontainer" *ngFor="let image of images; let i = index" [src]="image.imageData.value" 
@@ -15,4 +15,3 @@
     </main>
   </div>
 </div>
-<div *ngIf="!displayconfig">Please input your displayconfig</div>
