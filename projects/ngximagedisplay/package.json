@@ -14,7 +14,7 @@
     "type": "git",
     "url": "https://github.com/CreativeAcer/ngx-image-display.git"
   },
-  "homepage": "https://github.com/CreativeAcer/ngx-image-display.git",
+  "homepage": "https://creativeacer.github.io/ngx-image-display/",
   "peerDependencies": {
     "@angular/animations": "8.2.11",
     "@angular/common": "8.2.11",
