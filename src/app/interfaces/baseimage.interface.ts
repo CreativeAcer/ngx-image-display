@@ -1,6 +1,8 @@
 export interface baseImage {
     value: string;
-    extension: 'jpg' | 'jpeg' | 'png' | 'svg';
+    subtext?: string;
+    subtextOverlay?: 'bottom' | 'half' | 'full';
+    extension?: 'jpg' | 'jpeg' | 'png' | 'svg';
 }
 
 // data:image/png;base64,

@@ -16,6 +16,19 @@ The following settings are available
 [ngx-image-viewer](https://ngx-image-viewer.stackblitz.io/)
 
 ## Settings  
+
+Image settings options  
+
+Option | Default&#160;value | Description
+:---:|:---:|---
+value | *required* | This contains the url or base64 enceded value for the image
+subtext | empty | If a string is entered here it will be displayed in the image
+subtextOverlay | bottom | This will set the height of the overlay that is shown on the image. available options: 'bottom' - 'half' - 'full'  
+extension | none | You can set this to the correct extension of the provided image.  
+  
+
+Container settings options
+    
   
 Option | Default&#160;value | Description
 :---:|:---:|---
@@ -109,20 +122,25 @@ samesizeConfig {
 ```typescript
 Image  {
     type: 'base64' | 'url';  
-    imageData: baseImage | urlImage; 
+    imageData: baseImage;
 } 
 ```  
 ```typescript
-baseImage ( to be implemented )  {
+baseImage {
     value: string;  
-    extension: 'jpg' | 'jpeg' | 'png' | 'svg';  
+    subtext?: string;  
+    subtextOverlay?: string;
+    extension?: 'jpg' | 'jpeg' | 'png' | 'svg';  
 }
 ```  
-```typescript
+```typescript (no longer needed - implemented in base image)
 urlImage  {
     value: string;  
 }
 ```  
+
+#### example value for base64  
+'data:image/gif;base64,R0lGODlhPQBEAPeoAJosM//AwO/AwHVYZ/z595kzAP/s7P+go...'  
 
 ## Default Settings
   
