@@ -2,7 +2,7 @@
 
 Responsive image container
 
-[![npm version](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display.svg)](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display)
+[![npm version](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display.svg)](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display) [![Build Status](https://dev.azure.com/creativesuite/GitHub/_apis/build/status/CreativeAcer.ngx-image-display?branchName=master)](https://dev.azure.com/creativesuite/GitHub/_build/latest?definitionId=5&branchName=master) [![CodeFactor](https://www.codefactor.io/repository/github/creativeacer/ngx-image-display/badge/develop)](https://www.codefactor.io/repository/github/creativeacer/ngx-image-display/overview/develop)
 
 ## About
 This project can be used to display images on a page.  
@@ -16,6 +16,19 @@ The following settings are available
 [ngx-image-viewer](https://ngx-image-viewer.stackblitz.io/)
 
 ## Settings  
+
+Image settings options  
+
+Option | Default&#160;value | Description
+:---:|:---:|---
+value | *required* | This contains the url or base64 enceded value for the image
+subtext | empty | If a string is entered here it will be displayed in the image
+subtextOverlay | bottom | This will set the height of the overlay that is shown on the image. available options: 'bottom' - 'half' - 'full'  
+extension | none | You can set this to the correct extension of the provided image.  
+  
+
+Container settings options
+    
   
 Option | Default&#160;value | Description
 :---:|:---:|---
@@ -84,6 +97,7 @@ Once the library is imported, you can use its component in your Angular applicat
 <h1>
   {{title}}
 </h1>
+<!--[images] is required-->
 <ngx-image-display [images]="images" [sameSize]="samesizeConfig" [displayconfig]="displayconfig" (onImageSelected)="logImage($event)"></ngx-image-display>
 ```  
 
@@ -98,7 +112,7 @@ DisplayConfig {
     containerheight?: string;  
     onclick?: Function;
 }
-``` 
+```  
 ```typescript
 samesizeConfig {
   active: boolean;
@@ -108,24 +122,28 @@ samesizeConfig {
 ```typescript
 Image  {
     type: 'base64' | 'url';  
-    imageData: baseImage | urlImage; 
+    imageData: baseImage;
 } 
 ```  
 ```typescript
-baseImage ( to be implemented )  {
+baseImage {
     value: string;  
-    extension: 'jpg' | 'jpeg' | 'png' | 'svg';  
+    subtext?: string;  
+    subtextOverlay?: string;
+    extension?: 'jpg' | 'jpeg' | 'png' | 'svg';  
 }
 ```  
-```typescript
+```typescript (no longer needed - implemented in base image)
 urlImage  {
     value: string;  
 }
 ```  
 
+#### example value for base64  
+'data:image/gif;base64,R0lGODlhPQBEAPeoAJosM//AwO/AwHVYZ/z595kzAP/s7P+go...'  
+
 ## Default Settings
   
 If no Display configuration is provided the default settings will be used.  
-
 
 
