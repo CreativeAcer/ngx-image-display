@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, SimpleChanges } from '@angular/core';
 import { image, DisplayConfig, samesizeConfig, imageEffect} from '../interfaces/ngximagedisplay.interface';
 
 enum hoverEffect {
@@ -138,6 +138,12 @@ export class NgximagedisplayComponent implements OnInit {
 
   imageSelected(img: image) {
     this.onImageSelected.emit(img);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.setHoverEffect();
+    // this.setSameSize();
+    console.log(changes);
   }
 
 }

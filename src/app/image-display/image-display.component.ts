@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Renderer2, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Renderer2, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { DisplayConfig } from '../interfaces/displayconfig.interface';
 import { image, imageEffect } from '../interfaces/image.interface';
 import { samesizeConfig } from '../interfaces/samesize.interface';
@@ -143,6 +143,12 @@ export class ImageDisplayComponent implements OnInit {
 
   imageSelected(img: image) {
     this.onImageSelected.emit(img);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.setHoverEffect();
+    // this.setSameSize();
+    console.log(changes);
   }
 
 }
