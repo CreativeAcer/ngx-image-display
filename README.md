@@ -42,7 +42,7 @@ Option | Default&#160;value | Description
 columns | Auto-fit | This wil set the amount of columns to display with images. ex: 2 will provide you with 2 images next to each other.
 imageminwidth | 300px | This is the minimum resolution for an image, if the containing div is 700px 2 images can be shown, if it's 500px only one image will be show ( next to each other).
 hoverEffectActive | false | This will enable or disable the hover effect when the mouse hovers over an image.
-hoverEffect | 'zoom' | This will set the type of effect when hovering over an image. Possible settings: 'zoom' - 'lighten' - 'darken'
+hoverEffect | 'zoom' | This will set the type of effect when hovering over an image. Possible settings: 'zoom' - 'lighten' - 'darken' - 'greyscale' | 'sepia'
 containerwidth | 100% | Set the width for the image display container.
 containerheight | 100% | Set the height for the image display container.  
 
@@ -114,7 +114,7 @@ DisplayConfig {
     columns?: number;
     imageminwidth?: string;  
     hoverEffectActive?: boolean;  
-    hoverEffect?: 'zoom' | 'lighten' | 'darken';  
+    hoverEffect?: 'zoom' | 'lighten' | 'darken' | 'greyscale' | 'sepia';  
     containerwidth?: string;  
     containerheight?: string;  
     onclick?: Function;

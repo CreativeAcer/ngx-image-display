@@ -6,7 +6,9 @@ import { samesizeConfig } from '../interfaces/samesize.interface';
 enum hoverEffect {
   zoom = 'zoom',
   lighten = 'lighten',
-  darken = 'darken'
+  darken = 'darken',
+  greyscale = 'greyscale',
+  sepia = 'sepia'
 }
 
 @Component({
@@ -91,6 +93,12 @@ export class ImageDisplayComponent implements OnInit {
         case 'darken':
           this.zoomlvl = hoverEffect.darken;
           break;
+        case 'greyscale':
+          this.zoomlvl = hoverEffect.greyscale;
+          break;
+        case 'sepia':
+          this.zoomlvl = hoverEffect.sepia;
+          break;
         default:
           break;
       }
@@ -104,7 +112,9 @@ export class ImageDisplayComponent implements OnInit {
       'initialEffect': !this.hovering==i,
       'zoom': this.hovering==i && (this.zoomlvl === hoverEffect.zoom),
       'lighten': this.hovering==i && (this.zoomlvl === hoverEffect.lighten),
-      'darken': this.hovering==i && (this.zoomlvl === hoverEffect.darken)
+      'darken': this.hovering==i && (this.zoomlvl === hoverEffect.darken),
+      'greyscale': this.hovering==i && (this.zoomlvl === hoverEffect.greyscale),
+      'sepia': this.hovering==i && (this.zoomlvl === hoverEffect.sepia)
     }
   }
 

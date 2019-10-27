@@ -79,17 +79,38 @@ main{
     .zoom {
         z-index: '999';
         transform: scale(1.2);
-        filter: brightness(150%);
     }
 
     .lighten {
         z-index: '999';
+        -webkit-filter: brightness(150%);
         filter: brightness(150%);
+        -webkit-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
     }
 
     .darken {
         z-index: '999';
+        -webkit-filter: brightness(50%);
         filter: brightness(50%);
+        -webkit-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+    }
+
+    .greyscale {
+        z-index: '999';
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        -webkit-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+    }
+
+    .sepia {
+        z-index: '999';
+        -webkit-filter: sepia(100%);
+        filter: sepia(100%);
+        -webkit-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
     }
 
 }
