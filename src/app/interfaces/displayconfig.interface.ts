@@ -2,8 +2,8 @@ export interface DisplayConfig {
     // rows: number;
     columns?: number;
     imageminwidth?: string;
-    zoomonhover?: boolean;
-    zoomlevel?: 'small' | 'medium' | 'large';
+    hoverEffectActive?: boolean;
+    hoverEffect?: 'zoom' | 'lighten' | 'darken';
     containerwidth?: string;
     containerheight?: string;
     onclick?: Function;

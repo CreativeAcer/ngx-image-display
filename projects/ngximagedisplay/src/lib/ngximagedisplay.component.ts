@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { image, DisplayConfig, samesizeConfig} from '../interfaces/ngximagedisplay.interface';
 
-enum zoomlevel {
-  small = '1.2',
-  medium = '1.5',
-  large = '1.8'
+enum hoverEffect {
+  zoom = 'zoom',
+  lighten = 'lighten',
+  darken = 'darken'
 }
 
 @Component({
@@ -25,8 +25,8 @@ export class NgximagedisplayComponent implements OnInit {
    */
   defaultdisplayconfig: DisplayConfig = {
     imageminwidth: '250px',
-    zoomonhover: false,
-    zoomlevel: 'small',
+    hoverEffectActive: false,
+    hoverEffect: 'zoom',
     containerwidth: '65%',
     containerheight: '600px'
   };
@@ -50,7 +50,7 @@ export class NgximagedisplayComponent implements OnInit {
 
     this.setContainerLayout();
     this.setContainer();
-    this.setZoom();
+    this.setHoverEffect();
     this.setSameSize();
 
   }
@@ -74,23 +74,32 @@ export class NgximagedisplayComponent implements OnInit {
     }
   }
 
-  setZoom(): void {
-    if (this.displayconfig.zoomonhover && this.displayconfig.zoomlevel) {
-      switch (this.displayconfig.zoomlevel) {
-        case 'small':
-          this.zoomlvl = 'scale(' + zoomlevel.small + ')';
+  setHoverEffect(): void {
+    if (this.displayconfig.hoverEffectActive && this.displayconfig.hoverEffect) {
+      switch (this.displayconfig.hoverEffect) {
+        case 'zoom':
+          this.zoomlvl = hoverEffect.zoom;
           break;
-        case 'medium':
-          this.zoomlvl = 'scale(' + zoomlevel.medium + ')';
+        case 'lighten':
+          this.zoomlvl = hoverEffect.lighten;
           break;
-        case 'large':
-          this.zoomlvl = 'scale(' + zoomlevel.large + ')';
+        case 'darken':
+          this.zoomlvl = hoverEffect.darken;
           break;
         default:
           break;
       }
-    } else if (this.displayconfig.zoomonhover) {
-      this.zoomlvl = 'scale(' + zoomlevel.small + ')';
+    } else if (this.displayconfig.hoverEffectActive) {
+      this.zoomlvl = hoverEffect.zoom;
+    }
+  }
+
+  calculateStyle(i) {
+    return {
+      'initialEffect': !this.hovering==i,
+      'zoom': this.hovering==i && (this.zoomlvl === hoverEffect.zoom),
+      'lighten': this.hovering==i && (this.zoomlvl === hoverEffect.lighten),
+      'darken': this.hovering==i && (this.zoomlvl === hoverEffect.darken)
     }
   }
 
@@ -104,7 +113,7 @@ export class NgximagedisplayComponent implements OnInit {
   }
 
   mouseenter(itemIndex) {
-    if (this.displayconfig.zoomonhover) {
+    if (this.displayconfig.hoverEffectActive) {
       this.hovering = itemIndex;
     }
   }

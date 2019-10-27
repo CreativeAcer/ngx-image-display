@@ -25,8 +25,8 @@ export class AppComponent implements OnDestroy {
     this.displayconfig = {
       // columns: 2,
       imageminwidth: '300px',
-      zoomonhover: false,
-      zoomlevel: 'small',
+      hoverEffectActive: true,
+      hoverEffect: 'darken',
       containerwidth: '1000px',
       containerheight: '600px'
     };
