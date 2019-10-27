@@ -2,18 +2,26 @@
 
 Responsive image container
 
-[![npm version](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display.svg)](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display) [![Build Status](https://dev.azure.com/creativesuite/GitHub/_apis/build/status/CreativeAcer.ngx-image-display?branchName=master)](https://dev.azure.com/creativesuite/GitHub/_build/latest?definitionId=5&branchName=master) [![CodeFactor](https://www.codefactor.io/repository/github/creativeacer/ngx-image-display/badge/develop)](https://www.codefactor.io/repository/github/creativeacer/ngx-image-display/overview/develop)
+[![npm version](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display.svg)](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display) [![Build Status](https://dev.azure.com/creativesuite/GitHub/_apis/build/status/CreativeAcer.ngx-image-display?branchName=master)](https://dev.azure.com/creativesuite/GitHub/_build/latest?definitionId=5&branchName=master) [![CodeFactor](https://www.codefactor.io/repository/github/creativeacer/ngx-image-display/badge/develop)](https://www.codefactor.io/repository/github/creativeacer/ngx-image-display/overview/develop) 
+  
 
 ## About
 This project can be used to display images on a page.  
-The following settings are available  
+  
+
+![Example](./src/assets/images/Example.PNG?raw=true "Example")
+
 
 ### Demo ( open code )  
 
 [ngx-image-viewer](https://stackblitz.com/edit/ngx-image-viewer)
 
 ### Fullscreen demo ( live )
-[ngx-image-viewer](https://ngx-image-viewer.stackblitz.io/)
+[ngx-image-viewer](https://ngx-image-viewer.stackblitz.io/)  
+
+  
+    
+The following settings are available  
 
 ## Settings  
 
@@ -34,8 +42,8 @@ Option | Default&#160;value | Description
 :---:|:---:|---
 columns | Auto-fit | This wil set the amount of columns to display with images. ex: 2 will provide you with 2 images next to each other.
 imageminwidth | 300px | This is the minimum resolution for an image, if the containing div is 700px 2 images can be shown, if it's 500px only one image will be show ( next to each other).
-zoomonhover | false | This will enable or disable the hover effect when the mouse hovers over an image.
-zoomlevel | 'small' | This will set the amount of zoom that will occur if the zoomonhover is set to true. Possible settings: 'small' - 'medium' - 'large'
+hoverEffectActive | false | This will enable or disable the hover effect when the mouse hovers over an image.
+hoverEffect | 'zoom' | This will set the type of effect when hovering over an image. Possible settings: 'zoom' - 'lighten' - 'darken'
 containerwidth | 100% | Set the width for the image display container.
 containerheight | 100% | Set the height for the image display container.  
 
@@ -106,8 +114,8 @@ Once the library is imported, you can use its component in your Angular applicat
 DisplayConfig {
     columns?: number;
     imageminwidth?: string;  
-    zoomonhover?: boolean;  
-    zoomlevel?: 'small' | 'medium' | 'large';  
+    hoverEffectActive?: boolean;  
+    hoverEffect?: 'zoom' | 'lighten' | 'darken';  
     containerwidth?: string;  
     containerheight?: string;  
     onclick?: Function;
@@ -146,4 +154,41 @@ urlImage  {
   
 If no Display configuration is provided the default settings will be used.  
 
+
+
+## Future development information
+
+Here you can find some general info for contribution
+
+### Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+### Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+### Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+### Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+### Creating Library
+Run ng g library libname
+
+### Build npm package  
+from root   
+ng build ngximagedisplay
+
+### publish
+npm login   
+cd to dist/ngximagedisplay folder
+npm publish --access public
 

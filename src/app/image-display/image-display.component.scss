@@ -70,6 +70,28 @@ main{
         
     }
 
+    .initialEffect {
+        z-index: 'initial';
+        transform: scale(1.0);
+        filter: brightness(100%);
+    }
+
+    .zoom {
+        z-index: '999';
+        transform: scale(1.2);
+        filter: brightness(150%);
+    }
+
+    .lighten {
+        z-index: '999';
+        filter: brightness(150%);
+    }
+
+    .darken {
+        z-index: '999';
+        filter: brightness(50%);
+    }
+
     
 
     
