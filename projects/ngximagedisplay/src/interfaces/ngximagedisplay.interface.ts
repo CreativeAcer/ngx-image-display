@@ -15,8 +15,6 @@ export interface DisplayConfig {
     // rows: number;
     columns?: number;
     imageminwidth?: string;
-    hoverEffectActive?: boolean;
-    hoverEffect?: 'zoom' | 'lighten' | 'darken' | 'greyscale' | 'sepia';
     containerwidth?: string;
     containerheight?: string;
     onclick?: Function;
@@ -25,6 +23,11 @@ export interface DisplayConfig {
 export interface image {
     type: 'base64' | 'url';
     imageData: baseImage;
+}
+
+export interface imageEffect {
+    hoverEffectActive?: boolean;
+    hoverEffect?: 'zoom' | 'lighten' | 'darken' | 'greyscale' | 'sepia';
 }
 
 export interface samesizeConfig {
