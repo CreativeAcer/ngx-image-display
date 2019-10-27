@@ -114,13 +114,13 @@ export class ImageDisplayComponent implements OnInit {
 
   calculateStyle(i) {
     return {
-      'initialEffect': !this.hovering==i,
-      'zoom': this.hovering==i && (this.zoomlvl === hoverEffect.zoom),
-      'lighten': this.hovering==i && (this.zoomlvl === hoverEffect.lighten),
-      'darken': this.hovering==i && (this.zoomlvl === hoverEffect.darken),
-      'greyscale': this.hovering==i && (this.zoomlvl === hoverEffect.greyscale),
-      'sepia': this.hovering==i && (this.zoomlvl === hoverEffect.sepia)
-    }
+      initialEffect: !this.hovering == i,
+      zoom: this.hovering == i && (this.zoomlvl === hoverEffect.zoom),
+      lighten: this.hovering == i && (this.zoomlvl === hoverEffect.lighten),
+      darken: this.hovering == i && (this.zoomlvl === hoverEffect.darken),
+      greyscale: this.hovering == i && (this.zoomlvl === hoverEffect.greyscale),
+      sepia: this.hovering == i && (this.zoomlvl === hoverEffect.sepia)
+    };
   }
 
   setSameSize(): void {
