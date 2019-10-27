@@ -26,7 +26,7 @@ export class AppComponent implements OnDestroy {
       // columns: 2,
       imageminwidth: '300px',
       hoverEffectActive: true,
-      hoverEffect: 'darken',
+      hoverEffect: 'sepia',
       containerwidth: '1000px',
       containerheight: '600px'
     };
