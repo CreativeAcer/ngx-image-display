@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Renderer2, Output, EventEmitter } from '@angular/core';
 import { DisplayConfig } from '../interfaces/displayconfig.interface';
-import { image } from '../interfaces/image.interface';
+import { image, imageEffect } from '../interfaces/image.interface';
 import { samesizeConfig } from '../interfaces/samesize.interface';
 
 enum hoverEffect {
@@ -32,10 +32,11 @@ export class ImageDisplayComponent implements OnInit {
    */
     defaultdisplayconfig: DisplayConfig = {
       imageminwidth: '250px',
-      hoverEffectActive: false,
-      hoverEffect: 'zoom',
       containerwidth: '65%',
       containerheight: '600px'
+    };
+    defaultimageeffect: imageEffect = {
+      hoverEffectActive : false
     };
    /**
     * END Default configuration
@@ -44,6 +45,7 @@ export class ImageDisplayComponent implements OnInit {
   @Input() images: Array<image>;
   @Input() sameSize: samesizeConfig;
   @Input() displayconfig: DisplayConfig;
+  @Input() imageeffect: imageEffect;
 
   @Output() onImageSelected = new EventEmitter<image>();
 
@@ -53,6 +55,9 @@ export class ImageDisplayComponent implements OnInit {
   ngOnInit() {
     if (!this.displayconfig) {
       this.displayconfig = this.defaultdisplayconfig;
+    }
+    if (!this.imageeffect) {
+      this.imageeffect = this.defaultimageeffect;
     }
     // this.gridrows = 'repeat(auto-fit, minmax('+this.displayconfig.rowheight+', 1fr))';
 
@@ -82,8 +87,8 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   setHoverEffect(): void {
-    if (this.displayconfig.hoverEffectActive && this.displayconfig.hoverEffect) {
-      switch (this.displayconfig.hoverEffect) {
+    if (this.imageeffect.hoverEffectActive && this.imageeffect.hoverEffect) {
+      switch (this.imageeffect.hoverEffect) {
         case 'zoom':
           this.zoomlvl = hoverEffect.zoom;
           break;
@@ -102,7 +107,7 @@ export class ImageDisplayComponent implements OnInit {
         default:
           break;
       }
-    } else if (this.displayconfig.hoverEffectActive) {
+    } else if (this.imageeffect.hoverEffectActive) {
       this.zoomlvl = hoverEffect.zoom;
     }
   }
@@ -128,7 +133,7 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   mouseenter(itemIndex) {
-    if (this.displayconfig.hoverEffectActive) {
+    if (this.imageeffect.hoverEffectActive) {
       this.hovering = itemIndex;
     }
   }

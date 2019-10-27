@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { DisplayConfig } from './interfaces/displayconfig.interface';
-import { image } from './interfaces/image.interface';
+import { image, imageEffect } from './interfaces/image.interface';
 import { ImageService } from './service/image.service';
 import { Subscription } from 'rxjs';
 import { samesizeConfig } from './interfaces/samesize.interface';
@@ -17,6 +17,7 @@ export class AppComponent implements OnDestroy {
   images: Array<image> = [];
   samesizeConfig: samesizeConfig;
   displayconfig: DisplayConfig;
+  imageEffect: imageEffect;
 
   constructor(private imageservice: ImageService) {
     this.imagesub = this.imageservice.getImages().subscribe((images) => {
@@ -25,10 +26,12 @@ export class AppComponent implements OnDestroy {
     this.displayconfig = {
       // columns: 2,
       imageminwidth: '300px',
-      hoverEffectActive: true,
-      hoverEffect: 'sepia',
       containerwidth: '1000px',
       containerheight: '600px'
+    };
+    this.imageEffect = {
+      hoverEffectActive: true,
+      hoverEffect: 'lighten',
     };
     this.samesizeConfig = {
       active: true,
