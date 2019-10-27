@@ -146,9 +146,25 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.setHoverEffect();
-    // this.setSameSize();
-    console.log(changes);
+    switch (changes['imageeffect'].currentValue['hoverEffect']) {
+      case 'zoom':
+        this.zoomlvl = hoverEffect.zoom;
+        break;
+      case 'lighten':
+        this.zoomlvl = hoverEffect.lighten;
+        break;
+      case 'darken':
+        this.zoomlvl = hoverEffect.darken;
+        break;
+      case 'greyscale':
+        this.zoomlvl = hoverEffect.greyscale;
+        break;
+      case 'sepia':
+        this.zoomlvl = hoverEffect.sepia;
+        break;
+      default:
+        break;
+    }
   }
 
 }
