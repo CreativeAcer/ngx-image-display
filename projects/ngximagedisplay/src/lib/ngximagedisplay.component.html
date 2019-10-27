@@ -1,9 +1,8 @@
 <div class="bodymain">
   <div class="imageDiv" [ngStyle]="{'width': containerwidth, 'height': containerheight}">
     <main *ngIf="!sameSize.active" [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
-      <div class="overlay" *ngFor="let image of images; let i = index">
+      <div class="overlay" *ngFor="let image of images; let i = index" [ngStyle]="{'transform': hovering==i  ? zoomlvl : 'scale(1)', 'z-index': hovering==i  ? '999' : 'initial'}">
         <img (click)='imageSelected(image)' class="imagecontainer" [src]="image.imageData.value"
-          [ngStyle]="{'transform': hovering==i  ? zoomlvl : 'scale(1)', 'z-index': hovering==i  ? '999' : 'initial' }"
           (mouseenter)="mouseenter(i)" (mouseleave)="mouseleave()" />
         <div class="subtext" (click)='imageSelected(image)' [ngClass]="{'full': image.imageData.subtextOverlay === 'full',
         'half': image.imageData.subtextOverlay === 'half',
@@ -11,9 +10,9 @@
       </div>
     </main>
     <main *ngIf="sameSize.active" [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
-      <div class="overlay" *ngFor="let image of images; let i = index">
-        <div class="img imagecontainer" (click)='imageSelected(image)' [ngStyle]="{'transform': hovering==i  ? zoomlvl : 'scale(1)', 'z-index': hovering==i  ? '999' : 'initial', 
-        'background-image':' url(' + image.imageData.value + ')', 'min-height': sameSize.imgContainerHeight}"
+      <div class="overlay" *ngFor="let image of images; let i = index" [ngStyle]="{'transform': hovering==i  ? zoomlvl : 'scale(1)', 'z-index': hovering==i  ? '999' : 'initial'}">
+        <div class="img imagecontainer" (click)='imageSelected(image)' [ngStyle]="{'background-image':' url(' + image.imageData.value + ')',
+         'min-height': sameSize.imgContainerHeight}"
           (mouseenter)="mouseenter(i)" (mouseleave)="mouseleave()"></div>
         <div class="subtext" (click)='imageSelected(image)' [ngClass]="{'full': image.imageData.subtextOverlay === 'full',
         'half': image.imageData.subtextOverlay === 'half',
