@@ -140,26 +140,26 @@ export class NgximagedisplayComponent implements OnInit {
     this.onImageSelected.emit(img);
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    switch (changes['imageeffect'].currentValue['hoverEffect']) {
-      case 'zoom':
-        this.zoomlvl = hoverEffect.zoom;
-        break;
-      case 'lighten':
-        this.zoomlvl = hoverEffect.lighten;
-        break;
-      case 'darken':
-        this.zoomlvl = hoverEffect.darken;
-        break;
-      case 'greyscale':
-        this.zoomlvl = hoverEffect.greyscale;
-        break;
-      case 'sepia':
-        this.zoomlvl = hoverEffect.sepia;
-        break;
-      default:
-        break;
-    }
-  }
+  // ngOnChanges(changes: SimpleChanges) {
+  //   switch (changes['imageeffect'].currentValue['hoverEffect']) {
+  //     case 'zoom':
+  //       this.zoomlvl = hoverEffect.zoom;
+  //       break;
+  //     case 'lighten':
+  //       this.zoomlvl = hoverEffect.lighten;
+  //       break;
+  //     case 'darken':
+  //       this.zoomlvl = hoverEffect.darken;
+  //       break;
+  //     case 'greyscale':
+  //       this.zoomlvl = hoverEffect.greyscale;
+  //       break;
+  //     case 'sepia':
+  //       this.zoomlvl = hoverEffect.sepia;
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // }
 
 }
