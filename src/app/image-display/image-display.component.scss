@@ -18,7 +18,6 @@ main{
         display: flex;
         align-self: center;
         position: relative;
-        pointer-events: none;
 
         .imagecontainer {
             transition: transform .5s ease;
