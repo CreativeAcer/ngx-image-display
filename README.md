@@ -7,6 +7,9 @@ Responsive image container
 ## About
 This project can be used to display images on a page.  
   
+ **If you like the project please Star it** .  
+ *Feel free to contribute!*
+  
 
 ![Example](./src/assets/images/Example.PNG?raw=true "Example")
 
