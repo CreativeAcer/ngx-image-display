@@ -1,19 +1,17 @@
 <div class="bodymain">
     <div class="imageDiv" [ngStyle]="{'width': containerwidth, 'height': containerheight}">
       <main *ngIf="!sameSize.active" [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
-        <div class="overlay" *ngFor="let image of images; let i = index" [ngClass]="calculateStyle(i)">
-          <img (click)='imageSelected(image)' class="imagecontainer" [src]="image.imageData.value"
-            (mouseenter)="mouseenter(i)" (mouseleave)="mouseleave()" />
+        <div class="overlay" *ngFor="let image of images; let i = index"  (mouseenter)="mouseenter(i)" (mouseleave)="mouseleave()" [ngClass]="calculateStyle(i)">
+          <img (click)='imageSelected(image)' class="imagecontainer" [src]="image.imageData.value"/>
           <div class="subtext" (click)='imageSelected(image)' [ngClass]="{'full': image.imageData.subtextOverlay === 'full',
           'half': image.imageData.subtextOverlay === 'half',
           'bottom': image.imageData.subtextOverlay === 'bottom' || (!image.imageData.subtextOverlay && image.imageData.subtext)}">{{image.imageData.subtext}}</div>
         </div>
       </main>
       <main *ngIf="sameSize.active" [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
-        <div class="overlay" *ngFor="let image of images; let i = index" [ngClass]="calculateStyle(i)">
+        <div class="overlay" *ngFor="let image of images; let i = index" (mouseenter)="mouseenter(i)" (mouseleave)="mouseleave()"  [ngClass]="calculateStyle(i)">
           <div class="img imagecontainer" (click)='imageSelected(image)' [ngStyle]="{'background-image':' url(' + image.imageData.value + ')',
-           'min-height': sameSize.imgContainerHeight}"
-            (mouseenter)="mouseenter(i)" (mouseleave)="mouseleave()"></div>
+           'min-height': sameSize.imgContainerHeight}"></div>
           <div class="subtext" (click)='imageSelected(image)' [ngClass]="{'full': image.imageData.subtextOverlay === 'full',
           'half': image.imageData.subtextOverlay === 'half',
           'bottom': image.imageData.subtextOverlay === 'bottom' || (!image.imageData.subtextOverlay && image.imageData.subtext)}">{{image.imageData.subtext}}</div>

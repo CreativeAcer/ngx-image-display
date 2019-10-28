@@ -34,7 +34,7 @@ export class AppComponent implements OnDestroy {
       hoverEffect: 'lighten',
     };
     this.samesizeConfig = {
-      active: true,
+      active: false,
       imgContainerHeight: '300px'
     };
   }
