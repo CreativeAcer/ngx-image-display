@@ -72,11 +72,15 @@ onImageSelected | This will emit the image that has been selected when a user cl
 
 ## Installation
 
-To install this library, run:
-
+To install this library, run:  
+**npm**
 ```bash
 $ npm install @creativeacer/ngx-image-display --save
-```
+```  
+**yarn**
+```bash
+$ yarn add @creativeacer/ngx-image-display
+```  
 
 ## Using this library
 
