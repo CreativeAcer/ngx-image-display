@@ -4,11 +4,14 @@
     "name":"Marco Moris"
   },
   "license": "LGPL-3.0",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "keywords": [
+    "Ngx-Image-Display",
     "Angular",
     "Image",
-    "Display"
+    "Display",
+    "Ngx",
+    "Image-Display"
   ],
   "repository": {
     "type": "git",

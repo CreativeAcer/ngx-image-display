@@ -31,8 +31,8 @@ Image settings options
 
 Option | Default&#160;value | Description
 :---:|:---:|---
-value | *required* | This contains the url or base64 enceded value for the image
-subtext | empty | If a string is entered here it will be displayed in the image
+value | *required* | This contains the url or base64 encoded value for the image
+subtext | empty | If a string is entered here it will be displayed on the image through an overlay
 subtextOverlay | bottom | This will set the height of the overlay that is shown on the image. available options: 'bottom' - 'half' - 'full'  
 extension | none | You can set this to the correct extension of the provided image.  
   
@@ -42,10 +42,10 @@ Container settings options
   
 Option | Default&#160;value | Description
 :---:|:---:|---
-columns | Auto-fit | This wil set the amount of columns to display with images. ex: 2 will provide you with 2 images next to each other.
+columns | Auto-fit | This wil set the amount of columns to display with images. ex: 2 will provide you with 2 images next to each other. if no columns are provided the application will place as many images next to each other as possible
 imageminwidth | 300px | This is the minimum resolution for an image, if the containing div is 700px 2 images can be shown, if it's 500px only one image will be show ( next to each other).
 containerwidth | 100% | Set the width for the image display container.
-containerheight | 100% | Set the height for the image display container.  
+containerheight | 100% | Set the height for the image display container.   
   
 Hover effect settings  
   
@@ -81,6 +81,7 @@ $ npm install @creativeacer/ngx-image-display --save
 ```bash
 $ yarn add @creativeacer/ngx-image-display
 ```  
+
 
 ## Using this library
 
@@ -131,7 +132,7 @@ DisplayConfig {
 }
 ```  
 ```typescript  
-export interface imageEffect {
+imageEffect {
     hoverEffectActive?: boolean;
     hoverEffect?: 'zoom' | 'lighten' | 'darken' | 'greyscale' | 'sepia';
 }
