@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, Renderer2 } from '@angular/core';
 import { image, DisplayConfig, samesizeConfig, imageEffect} from '../interfaces/ngximagedisplay.interface';
 
 enum hoverEffect {
@@ -44,11 +44,11 @@ export class NgximagedisplayComponent implements OnInit {
 
  @Output() onImageSelected = new EventEmitter<image>();
 
- @ViewChild('myModal', { static: false }) myModal: ElementRef;
- @ViewChild('myImg', { static: false }) myImg: ElementRef;
- @ViewChild('img01', { static: false }) img01: ElementRef;
- @ViewChild('caption', { static: false }) caption: ElementRef;
- @ViewChild('close', { static: false }) close: ElementRef;
+ @ViewChild('myModal', { static: false }) myModal;
+ @ViewChild('myImg', { static: false }) myImg;
+ @ViewChild('img01', { static: false }) img01;
+ @ViewChild('caption', { static: false }) caption;
+ @ViewChild('close', { static: false }) close;
 
   constructor(private renderer: Renderer2) { }
 
@@ -155,27 +155,5 @@ export class NgximagedisplayComponent implements OnInit {
   imageSelected(img: image) {
     this.onImageSelected.emit(img);
   }
-
-  // ngOnChanges(changes: SimpleChanges) {
-  //   switch (changes['imageeffect'].currentValue['hoverEffect']) {
-  //     case 'zoom':
-  //       this.zoomlvl = hoverEffect.zoom;
-  //       break;
-  //     case 'lighten':
-  //       this.zoomlvl = hoverEffect.lighten;
-  //       break;
-  //     case 'darken':
-  //       this.zoomlvl = hoverEffect.darken;
-  //       break;
-  //     case 'greyscale':
-  //       this.zoomlvl = hoverEffect.greyscale;
-  //       break;
-  //     case 'sepia':
-  //       this.zoomlvl = hoverEffect.sepia;
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // }
 
 }
