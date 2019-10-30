@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { image, DisplayConfig, samesizeConfig, imageEffect} from '../interfaces/ngximagedisplay.interface';
 
 enum hoverEffect {
@@ -50,7 +50,7 @@ export class NgximagedisplayComponent implements OnInit {
  @ViewChild('caption', { static: false }) caption: ElementRef;
  @ViewChild('close', { static: false }) close: ElementRef;
 
-  constructor() { }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit() {
     if (!this.displayconfig) {
@@ -114,9 +114,9 @@ export class NgximagedisplayComponent implements OnInit {
   }
 
   viewFullScreen(img: image){
-    this.myModal.nativeElement.style.display = "block";
-    this.img01.nativeElement.src = img.imageData.value
-    this.caption.nativeElement.innerHTML = "Funny bird";
+    this.renderer.setStyle(this.myModal.nativeElement, 'display', 'block');
+    this.renderer.setProperty(this.img01.nativeElement, 'src', img.imageData.value);
+    this.renderer.setProperty(this.caption.nativeElement, 'innerHTML', img.imageData.subtext);
   }
 
   closeImage(){
