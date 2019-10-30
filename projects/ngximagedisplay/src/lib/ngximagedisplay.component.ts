@@ -120,7 +120,7 @@ export class NgximagedisplayComponent implements OnInit {
   }
 
   closeImage(){
-    this.myModal.nativeElement.style.display = "none";
+    this.renderer.setStyle(this.myModal.nativeElement, 'display', 'none');
   }
 
   calculateStyle(i) {

@@ -81,7 +81,7 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   closeImage(){
-    this.myModal.nativeElement.style.display = "none";
+    this.renderer.setStyle(this.myModal.nativeElement, 'display', 'none');
   }
 
   setContainer(): void {
