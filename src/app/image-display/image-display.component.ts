@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, Renderer2 } from '@angular/core';
 import { DisplayConfig } from '../interfaces/displayconfig.interface';
 import { image, imageEffect } from '../interfaces/image.interface';
 import { samesizeConfig } from '../interfaces/samesize.interface';
@@ -50,11 +50,11 @@ export class ImageDisplayComponent implements OnInit {
 
   @Output() onImageSelected = new EventEmitter<image>();
 
-  @ViewChild('myModal', { static: false }) myModal: ElementRef;
-  @ViewChild('myImg', { static: false }) myImg: ElementRef;
-  @ViewChild('img01', { static: false }) img01: ElementRef;
-  @ViewChild('caption', { static: false }) caption: ElementRef;
-  @ViewChild('close', { static: false }) close: ElementRef;
+  @ViewChild('myModal', { static: false }) myModal;
+  @ViewChild('myImg', { static: false }) myImg;
+  @ViewChild('img01', { static: false }) img01;
+  @ViewChild('caption', { static: false }) caption;
+  @ViewChild('close', { static: false }) close;
 
   constructor(private renderer: Renderer2) {
   }
