@@ -6,6 +6,7 @@
         <div class="subtext" (click)='imageSelected(image)' [ngClass]="{'full': image.imageData.subtextOverlay === 'full',
         'half': image.imageData.subtextOverlay === 'half',
         'bottom': image.imageData.subtextOverlay === 'bottom' || (!image.imageData.subtextOverlay && image.imageData.subtext)}">{{image.imageData.subtext}}</div>
+        <span *ngIf="displayconfig.fullScreenView" class="fullview" (click)="viewFullScreen(image)">&#10064;</span>
       </div>
     </main>
     <main *ngIf="sameSize.active" [ngStyle]="{'grid-template-columns': gridcolumns, 'grid-template-rows': gridrows}">
@@ -15,7 +16,15 @@
         <div class="subtext" (click)='imageSelected(image)' [ngClass]="{'full': image.imageData.subtextOverlay === 'full',
         'half': image.imageData.subtextOverlay === 'half',
         'bottom': image.imageData.subtextOverlay === 'bottom' || (!image.imageData.subtextOverlay && image.imageData.subtext)}">{{image.imageData.subtext}}</div>
+        <span *ngIf="displayconfig.fullScreenView" class="fullview" (click)="viewFullScreen(image)">&#10064;</span>
       </div>
     </main>
   </div>
+</div>
+
+<!-- The Modal --> 
+<div #myModal class="modal">
+<span #close class="close" (click)="closeImage()">&times;</span>
+<img class="modal-content" #img01>
+<div #caption></div>
 </div>

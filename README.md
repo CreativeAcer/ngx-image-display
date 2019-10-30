@@ -11,7 +11,16 @@ This project can be used to display images on a page.
  *Feel free to contribute!*
   
 
-![Example](./src/assets/images/Example.PNG?raw=true "Example")
+![Example](./src/assets/images/Example.PNG?raw=true "Example")  
+  
+
+## Core features  
+Display mulitple images in a set amount of rows or filling the available space.  
+View selected image in full screen.  
+Enable various hover filters.  
+Responsive Design.  
+
+Support Url or base64 images as input.  
 
 
 ### Demo ( open code )  
@@ -44,6 +53,7 @@ Option | Default&#160;value | Description
 :---:|:---:|---
 columns | Auto-fit | This wil set the amount of columns to display with images. ex: 2 will provide you with 2 images next to each other. if no columns are provided the application will place as many images next to each other as possible
 imageminwidth | 300px | This is the minimum resolution for an image, if the containing div is 700px 2 images can be shown, if it's 500px only one image will be show ( next to each other).
+fullScreenView | false | If set to true the user will have the option to view each image in fullscreen  
 containerwidth | 100% | Set the width for the image display container.
 containerheight | 100% | Set the height for the image display container.   
   
@@ -126,6 +136,7 @@ Once the library is imported, you can use its component in your Angular applicat
 DisplayConfig {
     columns?: number;
     imageminwidth?: string;   
+    fullScreenView?: boolean;  
     containerwidth?: string;  
     containerheight?: string;  
     onclick?: Function;

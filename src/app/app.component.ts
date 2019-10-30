@@ -27,14 +27,15 @@ export class AppComponent implements OnDestroy {
       // columns: 2,
       imageminwidth: '300px',
       containerwidth: '1000px',
-      containerheight: '600px'
+      containerheight: '600px',
+      fullScreenView: true
     };
     this.imageEffect = {
       hoverEffectActive: true,
       hoverEffect: 'zoom',
     };
     this.samesizeConfig = {
-      active: true,
+      active: false,
       imgContainerHeight: '300px'
     };
   }

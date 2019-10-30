@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Renderer2, Output, EventEmitter, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { DisplayConfig } from '../interfaces/displayconfig.interface';
 import { image, imageEffect } from '../interfaces/image.interface';
 import { samesizeConfig } from '../interfaces/samesize.interface';
@@ -33,7 +33,8 @@ export class ImageDisplayComponent implements OnInit {
     defaultdisplayconfig: DisplayConfig = {
       imageminwidth: '250px',
       containerwidth: '65%',
-      containerheight: '600px'
+      containerheight: '600px',
+      fullScreenView: false
     };
     defaultimageeffect: imageEffect = {
       hoverEffectActive : false
@@ -48,6 +49,12 @@ export class ImageDisplayComponent implements OnInit {
   @Input() imageeffect: imageEffect;
 
   @Output() onImageSelected = new EventEmitter<image>();
+
+  @ViewChild('myModal', { static: false }) myModal: ElementRef;
+  @ViewChild('myImg', { static: false }) myImg: ElementRef;
+  @ViewChild('img01', { static: false }) img01: ElementRef;
+  @ViewChild('caption', { static: false }) caption: ElementRef;
+  @ViewChild('close', { static: false }) close: ElementRef;
 
   constructor() {
   }
@@ -65,6 +72,16 @@ export class ImageDisplayComponent implements OnInit {
     this.setContainer();
     this.setHoverEffect();
     this.setSameSize();
+  }
+
+  viewFullScreen(img: image){
+    this.myModal.nativeElement.style.display = "block";
+    this.img01.nativeElement.src = img.imageData.value
+    this.caption.nativeElement.innerHTML = "Funny bird";
+  }
+
+  closeImage(){
+    this.myModal.nativeElement.style.display = "none";
   }
 
   setContainer(): void {
