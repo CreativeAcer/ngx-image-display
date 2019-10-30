@@ -16,7 +16,7 @@ This project can be used to display images on a page.
 
   
 ## Core features  
-Display mulitple images in a set amount of rows or filling the available space.  
+Display mulitple images in a set amount of columns or filling the available space.  
 View selected image in full screen.  
 Enable various hover filters.  
 Responsive Design.  

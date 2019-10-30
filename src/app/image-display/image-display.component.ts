@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { DisplayConfig } from '../interfaces/displayconfig.interface';
 import { image, imageEffect } from '../interfaces/image.interface';
 import { samesizeConfig } from '../interfaces/samesize.interface';
@@ -56,7 +56,7 @@ export class ImageDisplayComponent implements OnInit {
   @ViewChild('caption', { static: false }) caption: ElementRef;
   @ViewChild('close', { static: false }) close: ElementRef;
 
-  constructor() {
+  constructor(private renderer: Renderer2) {
   }
 
   ngOnInit() {
@@ -74,14 +74,14 @@ export class ImageDisplayComponent implements OnInit {
     this.setSameSize();
   }
 
-  viewFullScreen(img: image){
-    this.myModal.nativeElement.style.display = "block";
-    this.img01.nativeElement.src = img.imageData.value
-    this.caption.nativeElement.innerHTML = "Funny bird";
+  viewFullScreen(img: image) {
+    this.renderer.setStyle(this.myModal.nativeElement, 'display', 'block');
+    this.renderer.setProperty(this.img01.nativeElement, 'src', img.imageData.value);
+    this.renderer.setProperty(this.caption.nativeElement, 'innerHTML', img.imageData.subtext);
   }
 
   closeImage(){
-    this.myModal.nativeElement.style.display = "none";
+    this.renderer.setStyle(this.myModal.nativeElement, 'display', 'none');
   }
 
   setContainer(): void {
