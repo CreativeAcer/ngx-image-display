@@ -31,10 +31,10 @@ export class AppComponent implements OnDestroy {
     };
     this.imageEffect = {
       hoverEffectActive: true,
-      hoverEffect: 'lighten',
+      hoverEffect: 'zoom',
     };
     this.samesizeConfig = {
-      active: false,
+      active: true,
       imgContainerHeight: '300px'
     };
   }
