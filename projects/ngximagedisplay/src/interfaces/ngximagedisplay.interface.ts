@@ -17,6 +17,7 @@ export interface DisplayConfig {
     imageminwidth?: string;
     containerwidth?: string;
     containerheight?: string;
+    fullScreenView?: boolean;
     onclick?: Function;
 }
 

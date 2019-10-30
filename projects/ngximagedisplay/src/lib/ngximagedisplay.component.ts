@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 import { image, DisplayConfig, samesizeConfig, imageEffect} from '../interfaces/ngximagedisplay.interface';
 
 enum hoverEffect {
@@ -43,6 +43,12 @@ export class NgximagedisplayComponent implements OnInit {
  @Input() imageeffect: imageEffect;
 
  @Output() onImageSelected = new EventEmitter<image>();
+
+ @ViewChild('myModal', { static: false }) myModal: ElementRef;
+ @ViewChild('myImg', { static: false }) myImg: ElementRef;
+ @ViewChild('img01', { static: false }) img01: ElementRef;
+ @ViewChild('caption', { static: false }) caption: ElementRef;
+ @ViewChild('close', { static: false }) close: ElementRef;
 
   constructor() { }
 
@@ -105,6 +111,16 @@ export class NgximagedisplayComponent implements OnInit {
     } else if (this.imageeffect.hoverEffectActive) {
       this.zoomlvl = hoverEffect.zoom;
     }
+  }
+
+  viewFullScreen(img: image){
+    this.myModal.nativeElement.style.display = "block";
+    this.img01.nativeElement.src = img.imageData.value
+    this.caption.nativeElement.innerHTML = "Funny bird";
+  }
+
+  closeImage(){
+    this.myModal.nativeElement.style.display = "none";
   }
 
   calculateStyle(i) {
