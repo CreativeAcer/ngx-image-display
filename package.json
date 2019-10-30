@@ -14,9 +14,12 @@
     "e2e": "ng e2e"
   },
   "keywords": [
+    "Ngx-Image-Display",
     "Angular",
     "Image",
-    "Display"
+    "Display",
+    "Ngx",
+    "Image-Display"
   ],
   "repository": {
     "type": "git",
