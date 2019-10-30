@@ -1,6 +1,6 @@
 # NgxImageDisplay
 
-Responsive image container
+Ngx-Image-Display : Responsive image container
 
 [![npm version](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display.svg)](https://badge.fury.io/js/%40creativeacer%2Fngx-image-display) [![Build Status](https://dev.azure.com/creativesuite/GitHub/_apis/build/status/CreativeAcer.ngx-image-display?branchName=master)](https://dev.azure.com/creativesuite/GitHub/_build/latest?definitionId=5&branchName=master) [![CodeFactor](https://www.codefactor.io/repository/github/creativeacer/ngx-image-display/badge/develop)](https://www.codefactor.io/repository/github/creativeacer/ngx-image-display/overview/develop) [![GitHub open issues](https://img.shields.io/github/issues/CreativeAcer/ngx-image-display.svg)](https://github.com/CreativeAcer/ngx-image-display/issues) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
