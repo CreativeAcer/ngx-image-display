@@ -27,10 +27,10 @@ Support Url or base64 images as input.
 
 ### Demo ( open code )  
 
-[ngx-image-viewer](https://stackblitz.com/edit/ngx-image-viewer)
+[ngx-image-display](https://stackblitz.com/edit/ngx-image-display)
 
 ### Fullscreen demo ( live )
-[ngx-image-viewer](https://ngx-image-viewer.stackblitz.io/)  
+[ngx-image-display](https://ngx-image-display.stackblitz.io/)  
 
   
     
