@@ -77,7 +77,7 @@ export class ImageDisplayComponent implements OnInit {
   viewFullScreen(img: image) {
     this.renderer.setStyle(this.myModal.nativeElement, 'display', 'block');
     this.renderer.setProperty(this.img01.nativeElement, 'src', img.imageData.value);
-    this.renderer.setProperty(this.caption.nativeElement, 'innerHTML', img.imageData.subtext);
+    this.renderer.setProperty(this.caption.nativeElement, 'innerHTML', img.imageData.subtext ? img.imageData.subtext : '');
   }
 
   closeImage(){
