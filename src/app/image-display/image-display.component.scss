@@ -8,7 +8,14 @@
     }
 }
 
+.overlay:hover{
+  .fullview{
+    display: initial;
+  }
+}
+
 .fullview {
+    display: none;
     position: absolute;
     top: 15px;
     right: 25px;
