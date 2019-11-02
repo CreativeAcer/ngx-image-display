@@ -40,7 +40,7 @@ export class NgximagedisplayComponent implements OnInit {
  @Input() images: Array<ImageData>;
  @Input() sameSize: SameSizeConfig;
  @Input() displayconfig: DisplayConfig;
- @Input() ImageEffect: ImageEffect;
+ @Input() imageEffect: ImageEffect;
 
  @Output() onImageSelected = new EventEmitter<ImageData>();
 
@@ -56,8 +56,8 @@ export class NgximagedisplayComponent implements OnInit {
     if (!this.displayconfig) {
       this.displayconfig = this.defaultdisplayconfig;
     }
-    if (!this.ImageEffect) {
-      this.ImageEffect = this.defaultImageEffect;
+    if (!this.imageEffect) {
+      this.imageEffect = this.defaultImageEffect;
     }
     // this.gridrows = 'repeat(auto-fit, minmax('+this.displayconfig.rowheight+', 1fr))';
 
@@ -88,8 +88,8 @@ export class NgximagedisplayComponent implements OnInit {
   }
 
   setHoverEffect(): void {
-    if (this.ImageEffect.hoverEffectActive && this.ImageEffect.hoverEffect) {
-      switch (this.ImageEffect.hoverEffect) {
+    if (this.imageEffect.hoverEffectActive && this.imageEffect.hoverEffect) {
+      switch (this.imageEffect.hoverEffect) {
         case 'zoom':
           this.zoomlvl = hoverEffect.zoom;
           break;
@@ -108,7 +108,7 @@ export class NgximagedisplayComponent implements OnInit {
         default:
           break;
       }
-    } else if (this.ImageEffect.hoverEffectActive) {
+    } else if (this.imageEffect.hoverEffectActive) {
       this.zoomlvl = hoverEffect.zoom;
     }
   }
@@ -144,7 +144,7 @@ export class NgximagedisplayComponent implements OnInit {
   }
 
   mouseenter(itemIndex) {
-    if (this.ImageEffect.hoverEffectActive) {
+    if (this.imageEffect.hoverEffectActive) {
       this.hovering = itemIndex;
     }
   }
