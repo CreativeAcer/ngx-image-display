@@ -44,7 +44,7 @@ Input | Interface | Description
 images | ImageData | This will be the array containing the images you would like the module to display.  
 sameSize | SameSizeConfig | This will define if the images are scaled to be the same size or not with reference to the selected height.  
 displayconfig | DisplayConfig | This will set the general configuration for the module.  
-ImageEffect | ImageEffect | This will enable or disable the selected effect when a user hovers over an image.  
+imageEffect | ImageEffect | This will enable or disable the selected effect when a user hovers over an image.  
   
 ### **Input Options**
 The following settings are available  
