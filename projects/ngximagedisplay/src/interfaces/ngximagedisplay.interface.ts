@@ -18,7 +18,7 @@ export interface DisplayConfig {
     containerwidth?: string;
     containerheight?: string;
     fullScreenView?: boolean;
-    onclick?: Function;
+    onclick?: () => ImageData;
 }
 
 export interface ImageData {
