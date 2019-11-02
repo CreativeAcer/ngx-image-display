@@ -1,11 +1,11 @@
-import { baseImage } from './baseimage.interface';
+import { BaseImage } from './BaseImage.interface';
 
-export interface image {
+export interface ImageData {
     type: 'base64' | 'url';
-    imageData: baseImage;
+    imageData: BaseImage;
 }
 
-export interface imageEffect {
+export interface ImageEffect {
     hoverEffectActive?: boolean;
     hoverEffect?: 'zoom' | 'lighten' | 'darken' | 'greyscale' | 'sepia';
 }

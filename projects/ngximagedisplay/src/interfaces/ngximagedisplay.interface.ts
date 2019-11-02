@@ -1,11 +1,11 @@
-export interface baseImage {
+export interface BaseImage {
     value: string;
     subtext?: string;
     subtextOverlay?: 'bottom' | 'half' | 'full';
     extension?: 'jpg' | 'jpeg' | 'png' | 'svg';
 }
 
-export interface urlImage {
+export interface UrlImage {
     value: string;
 }
 
@@ -18,20 +18,20 @@ export interface DisplayConfig {
     containerwidth?: string;
     containerheight?: string;
     fullScreenView?: boolean;
-    onclick?: Function;
+    onclick?: () => ImageData;
 }
 
-export interface image {
+export interface ImageData {
     type: 'base64' | 'url';
-    imageData: baseImage;
+    imageData: BaseImage;
 }
 
-export interface imageEffect {
+export interface ImageEffect {
     hoverEffectActive?: boolean;
     hoverEffect?: 'zoom' | 'lighten' | 'darken' | 'greyscale' | 'sepia';
 }
 
-export interface samesizeConfig {
+export interface SameSizeConfig {
     active: boolean;
     imgContainerHeight: string;
 }
