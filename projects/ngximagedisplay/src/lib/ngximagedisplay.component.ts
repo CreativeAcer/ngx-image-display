@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output, ViewChild, Renderer2 } from '@angular/core';
-import { image, DisplayConfig, samesizeConfig, imageEffect} from '../interfaces/ngximagedisplay.interface';
+import { ImageData, DisplayConfig, SameSizeConfig, ImageEffect} from '../interfaces/ngximagedisplay.interface';
 
 enum hoverEffect {
   zoom = 'zoom',
@@ -30,19 +30,19 @@ export class NgximagedisplayComponent implements OnInit {
     containerwidth: '65%',
     containerheight: '600px'
   };
-  defaultimageeffect: imageEffect = {
+  defaultImageEffect: ImageEffect = {
     hoverEffectActive : false
   };
  /**
   * END Default configuration
   */
 
- @Input() images: Array<image>;
- @Input() sameSize: samesizeConfig;
+ @Input() images: Array<ImageData>;
+ @Input() sameSize: SameSizeConfig;
  @Input() displayconfig: DisplayConfig;
- @Input() imageeffect: imageEffect;
+ @Input() ImageEffect: ImageEffect;
 
- @Output() onImageSelected = new EventEmitter<image>();
+ @Output() onImageSelected = new EventEmitter<ImageData>();
 
  @ViewChild('myModal', { static: false }) myModal;
  @ViewChild('myImg', { static: false }) myImg;
@@ -56,8 +56,8 @@ export class NgximagedisplayComponent implements OnInit {
     if (!this.displayconfig) {
       this.displayconfig = this.defaultdisplayconfig;
     }
-    if (!this.imageeffect) {
-      this.imageeffect = this.defaultimageeffect;
+    if (!this.ImageEffect) {
+      this.ImageEffect = this.defaultImageEffect;
     }
     // this.gridrows = 'repeat(auto-fit, minmax('+this.displayconfig.rowheight+', 1fr))';
 
@@ -88,8 +88,8 @@ export class NgximagedisplayComponent implements OnInit {
   }
 
   setHoverEffect(): void {
-    if (this.imageeffect.hoverEffectActive && this.imageeffect.hoverEffect) {
-      switch (this.imageeffect.hoverEffect) {
+    if (this.ImageEffect.hoverEffectActive && this.ImageEffect.hoverEffect) {
+      switch (this.ImageEffect.hoverEffect) {
         case 'zoom':
           this.zoomlvl = hoverEffect.zoom;
           break;
@@ -108,12 +108,12 @@ export class NgximagedisplayComponent implements OnInit {
         default:
           break;
       }
-    } else if (this.imageeffect.hoverEffectActive) {
+    } else if (this.ImageEffect.hoverEffectActive) {
       this.zoomlvl = hoverEffect.zoom;
     }
   }
 
-  viewFullScreen(img: image){
+  viewFullScreen(img: ImageData){
     this.renderer.setStyle(this.myModal.nativeElement, 'display', 'block');
     this.renderer.setProperty(this.img01.nativeElement, 'src', img.imageData.value);
     this.renderer.setProperty(this.caption.nativeElement, 'innerHTML', img.imageData.subtext ? img.imageData.subtext : '');
@@ -144,7 +144,7 @@ export class NgximagedisplayComponent implements OnInit {
   }
 
   mouseenter(itemIndex) {
-    if (this.imageeffect.hoverEffectActive) {
+    if (this.ImageEffect.hoverEffectActive) {
       this.hovering = itemIndex;
     }
   }
@@ -152,7 +152,7 @@ export class NgximagedisplayComponent implements OnInit {
     this.hovering = -1;
   }
 
-  imageSelected(img: image) {
+  imageSelected(img: ImageData) {
     this.onImageSelected.emit(img);
   }
 

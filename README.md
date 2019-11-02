@@ -40,10 +40,10 @@ The component accepts the following inputs.
   
 Input | Interface | Description  
 :---:|:---:|---  
-images | image | This will be the array containing the images you would like the module to display.  
-sameSize | samesizeConfig | This will define if the images are scaled to be the same size or not with reference to the selected height.  
+images | ImageData | This will be the array containing the images you would like the module to display.  
+sameSize | SameSizeConfig | This will define if the images are scaled to be the same size or not with reference to the selected height.  
 displayconfig | DisplayConfig | This will set the general configuration for the module.  
-imageeffect | imageEffect | This will enable or disable the selected effect when a user hovers over an image.  
+ImageEffect | ImageEffect | This will enable or disable the selected effect when a user hovers over an image.  
   
 ### **Input Options**
 The following settings are available  
@@ -156,7 +156,7 @@ Once the library is imported, you can use its component in your Angular applicat
   {{title}}
 </h1>
 <!--[images] is required-->
-<ngx-image-display [images]="images" [sameSize]="samesizeConfig" [imageeffect]="imageEffect" [displayconfig]="displayconfig" (onImageSelected)="logImage($event)"></ngx-image-display>
+<ngx-image-display [images]="images" [sameSize]="SameSizeConfig" [ImageEffect]="ImageEffect" [displayconfig]="displayconfig" (onImageSelected)="logImage($event)"></ngx-image-display>
 ```  
 
 ### **Interfaces**
@@ -171,25 +171,25 @@ DisplayConfig {
 }
 ```  
 ```typescript  
-imageEffect {
+ImageEffect {
     hoverEffectActive?: boolean;
     hoverEffect?: 'zoom' | 'lighten' | 'darken' | 'greyscale' | 'sepia';
 }
 ```  
 ```typescript
-samesizeConfig {
+SameSizeConfig {
   active: boolean;
   imgContainerHeight: string;
 }
 ```  
 ```typescript
-Image  {
+ImageData  {
     type: 'base64' | 'url';  
-    imageData: baseImage;
+    imageData: BaseImage;
 } 
 ```  
 ```typescript
-baseImage {
+BaseImage {
     value: string;  
     subtext?: string;  
     subtextOverlay?: string;

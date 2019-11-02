@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, Renderer2 } from '@angular/core';
 import { DisplayConfig } from '../interfaces/displayconfig.interface';
-import { image, imageEffect } from '../interfaces/image.interface';
-import { samesizeConfig } from '../interfaces/samesize.interface';
+import { ImageData, ImageEffect } from '../interfaces/image.interface';
+import { SameSizeConfig } from '../interfaces/samesize.interface';
 
 enum hoverEffect {
   zoom = 'zoom',
@@ -36,19 +36,19 @@ export class ImageDisplayComponent implements OnInit {
       containerheight: '600px',
       fullScreenView: false
     };
-    defaultimageeffect: imageEffect = {
+    defaultImageEffect: ImageEffect = {
       hoverEffectActive : false
     };
    /**
     * END Default configuration
     */
 
-  @Input() images: Array<image>;
-  @Input() sameSize: samesizeConfig;
+  @Input() images: Array<ImageData>;
+  @Input() sameSize: SameSizeConfig;
   @Input() displayconfig: DisplayConfig;
-  @Input() imageeffect: imageEffect;
+  @Input() ImageEffect: ImageEffect;
 
-  @Output() onImageSelected = new EventEmitter<image>();
+  @Output() onImageSelected = new EventEmitter<ImageData>();
 
   @ViewChild('myModal', { static: false }) myModal;
   @ViewChild('myImg', { static: false }) myImg;
@@ -63,8 +63,8 @@ export class ImageDisplayComponent implements OnInit {
     if (!this.displayconfig) {
       this.displayconfig = this.defaultdisplayconfig;
     }
-    if (!this.imageeffect) {
-      this.imageeffect = this.defaultimageeffect;
+    if (!this.ImageEffect) {
+      this.ImageEffect = this.defaultImageEffect;
     }
     // this.gridrows = 'repeat(auto-fit, minmax('+this.displayconfig.rowheight+', 1fr))';
 
@@ -74,7 +74,7 @@ export class ImageDisplayComponent implements OnInit {
     this.setSameSize();
   }
 
-  viewFullScreen(img: image) {
+  viewFullScreen(img: ImageData) {
     this.renderer.setStyle(this.myModal.nativeElement, 'display', 'block');
     this.renderer.setProperty(this.img01.nativeElement, 'src', img.imageData.value);
     this.renderer.setProperty(this.caption.nativeElement, 'innerHTML', img.imageData.subtext ? img.imageData.subtext : '');
@@ -104,8 +104,8 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   setHoverEffect(): void {
-    if (this.imageeffect.hoverEffectActive && this.imageeffect.hoverEffect) {
-      switch (this.imageeffect.hoverEffect) {
+    if (this.ImageEffect.hoverEffectActive && this.ImageEffect.hoverEffect) {
+      switch (this.ImageEffect.hoverEffect) {
         case 'zoom':
           this.zoomlvl = hoverEffect.zoom;
           break;
@@ -124,7 +124,7 @@ export class ImageDisplayComponent implements OnInit {
         default:
           break;
       }
-    } else if (this.imageeffect.hoverEffectActive) {
+    } else if (this.ImageEffect.hoverEffectActive) {
       this.zoomlvl = hoverEffect.zoom;
     }
   }
@@ -150,7 +150,7 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   mouseenter(itemIndex) {
-    if (this.imageeffect.hoverEffectActive) {
+    if (this.ImageEffect.hoverEffectActive) {
       this.hovering = itemIndex;
     }
   }
@@ -158,12 +158,12 @@ export class ImageDisplayComponent implements OnInit {
     this.hovering = -1;
   }
 
-  imageSelected(img: image) {
+  imageSelected(img: ImageData) {
     this.onImageSelected.emit(img);
   }
 
   // ngOnChanges(changes: SimpleChanges) {
-  //   switch (changes['imageeffect'].currentValue['hoverEffect']) {
+  //   switch (changes['ImageEffect'].currentValue['hoverEffect']) {
   //     case 'zoom':
   //       this.zoomlvl = hoverEffect.zoom;
   //       break;

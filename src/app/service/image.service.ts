@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { image } from '../interfaces/image.interface';
+import { ImageData } from '../interfaces/image.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
-  images: Array<image>;
+  images: Array<ImageData>;
 
   constructor() {
     this.images = [
@@ -93,7 +93,7 @@ export class ImageService {
 
   
 
-  getImages(): Observable<image[]> {
+  getImages(): Observable<ImageData[]> {
     return of(this.images);
   }
 }

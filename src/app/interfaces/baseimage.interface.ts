@@ -1,4 +1,4 @@
-export interface baseImage {
+export interface BaseImage {
     value: string;
     subtext?: string;
     subtextOverlay?: 'bottom' | 'half' | 'full';

@@ -1,4 +1,4 @@
-export interface samesizeConfig {
+export interface SameSizeConfig {
     active: boolean;
     imgContainerHeight: string;
 }
