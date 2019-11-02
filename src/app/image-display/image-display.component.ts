@@ -80,7 +80,7 @@ export class ImageDisplayComponent implements OnInit {
     this.renderer.setProperty(this.caption.nativeElement, 'innerHTML', img.imageData.subtext ? img.imageData.subtext : '');
   }
 
-  closeImage(){
+  closeImage() {
     this.renderer.setStyle(this.myModal.nativeElement, 'display', 'none');
   }
 

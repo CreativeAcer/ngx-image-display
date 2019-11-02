@@ -113,13 +113,13 @@ export class NgximagedisplayComponent implements OnInit {
     }
   }
 
-  viewFullScreen(img: ImageData){
+  viewFullScreen(img: ImageData) {
     this.renderer.setStyle(this.myModal.nativeElement, 'display', 'block');
     this.renderer.setProperty(this.img01.nativeElement, 'src', img.imageData.value);
     this.renderer.setProperty(this.caption.nativeElement, 'innerHTML', img.imageData.subtext ? img.imageData.subtext : '');
   }
 
-  closeImage(){
+  closeImage() {
     this.renderer.setStyle(this.myModal.nativeElement, 'display', 'none');
   }
 

@@ -1,3 +1,3 @@
-export interface urlImage {
+export interface UrlImage {
     value: string;
 }
