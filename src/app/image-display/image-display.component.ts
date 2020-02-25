@@ -159,12 +159,11 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   imageSelected(mouseEvent: MouseEvent, img: ImageData) {
-    let clickedImageData: ClickedImageData = {
+    this.onImageSelected.emit({
       imageData: img.imageData,
       type: img.type,
       mouseEvent: mouseEvent
-    }
-    this.onImageSelected.emit(clickedImageData);
+    });
   }
 
   // ngOnChanges(changes: SimpleChanges) {
