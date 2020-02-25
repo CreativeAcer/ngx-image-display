@@ -159,10 +159,10 @@ export class ImageDisplayComponent implements OnInit {
   }
 
   imageSelected(mouseEvent: MouseEvent, img: ImageData) {
-    let clickedImageData: ClickedImageData = {
+    const clickedImageData: ClickedImageData = {
       imageData: img.imageData,
       type: img.type,
-      mouseEvent: mouseEvent
+      mouseEvent
     }
     this.onImageSelected.emit(clickedImageData);
   }
