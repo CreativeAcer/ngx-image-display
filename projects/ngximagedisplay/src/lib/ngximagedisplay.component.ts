@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output, ViewChild, Renderer2 } from '@angular/core';
-import { ImageData, DisplayConfig, SameSizeConfig, ImageEffect} from '../interfaces/ngximagedisplay.interface';
+import { ImageData, DisplayConfig, SameSizeConfig, ImageEffect, ClickedImageData} from '../interfaces/ngximagedisplay.interface';
 
 enum hoverEffect {
   zoom = 'zoom',
@@ -152,8 +152,13 @@ export class NgximagedisplayComponent implements OnInit {
     this.hovering = -1;
   }
 
-  imageSelected(img: ImageData) {
-    this.onImageSelected.emit(img);
+  imageSelected(mouseEvent: MouseEvent, img: ImageData) {
+    const clickedImageData: ClickedImageData = {
+      imageData: img.imageData,
+      type: img.type,
+      mouseEvent
+    }
+    this.onImageSelected.emit(clickedImageData);
   }
 
 }
