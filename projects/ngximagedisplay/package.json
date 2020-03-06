@@ -3,8 +3,11 @@
   "author": {
     "name":"Marco Moris"
   },
+  "contributors": [
+    "Michael Zeuner"
+  ],
   "license": "LGPL-3.0",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "keywords": [
     "Ngx-Image-Display",
     "Angular",
