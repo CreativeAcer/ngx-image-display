@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, Renderer2 } from '@angular/core';
 import { DisplayConfig } from '../interfaces/displayconfig.interface';
-import { ImageData, ImageEffect } from '../interfaces/image.interface';
+import { ImageData, ImageEffect, ClickedImageData } from '../interfaces/image.interface';
 import { SameSizeConfig } from '../interfaces/samesize.interface';
 
 enum hoverEffect {
@@ -48,7 +48,7 @@ export class ImageDisplayComponent implements OnInit {
   @Input() displayconfig: DisplayConfig;
   @Input() imageEffect: ImageEffect;
 
-  @Output() onImageSelected = new EventEmitter<ImageData>();
+  @Output() onImageSelected = new EventEmitter<ClickedImageData>();
 
   @ViewChild('myModal', { static: false }) myModal;
   @ViewChild('myImg', { static: false }) myImg;
@@ -158,8 +158,13 @@ export class ImageDisplayComponent implements OnInit {
     this.hovering = -1;
   }
 
-  imageSelected(img: ImageData) {
-    this.onImageSelected.emit(img);
+  imageSelected(mouseEvent: MouseEvent, img: ImageData) {
+    const clickedImageData: ClickedImageData = {
+      imageData: img.imageData,
+      type: img.type,
+      mouseEvent
+    }
+    this.onImageSelected.emit(clickedImageData);
   }
 
   // ngOnChanges(changes: SimpleChanges) {
