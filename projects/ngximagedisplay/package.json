@@ -7,7 +7,7 @@
     "Michael Zeuner"
   ],
   "license": "LGPL-3.0",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "keywords": [
     "Ngx-Image-Display",
     "Angular",
@@ -25,15 +25,16 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/animations": "8.2.11",
-    "@angular/common": "8.2.11",
-    "@angular/compiler": "8.2.11",
-    "@angular/core": "8.2.11",
-    "@angular/forms": "8.2.11",
-    "@angular/platform-browser": "8.2.11",
-    "@angular/platform-browser-dynamic": "8.2.11",
-    "@angular/router": "8.2.11",
-    "rxjs": "6.4.0",
-    "zone.js": "0.9.1"
+    "@angular/animations": "~10.1.2",
+    "@angular/common": "~10.1.2",
+    "@angular/compiler": "~10.1.2",
+    "@angular/core": "~10.1.2",
+    "@angular/forms": "~10.1.2",
+    "@angular/platform-browser": "~10.1.2",
+    "@angular/platform-browser-dynamic": "~10.1.2",
+    "@angular/router": "~10.1.2",
+    "rxjs": "~6.6.3",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
   }
 }
