@@ -44,11 +44,11 @@ export class NgximagedisplayComponent implements OnInit {
 
  @Output() onImageSelected = new EventEmitter<ImageData>();
 
- @ViewChild('myModal', { static: false }) myModal;
- @ViewChild('myImg', { static: false }) myImg;
- @ViewChild('img01', { static: false }) img01;
- @ViewChild('caption', { static: false }) caption;
- @ViewChild('close', { static: false }) close;
+ @ViewChild('myModal') myModal;
+ @ViewChild('myImg') myImg;
+ @ViewChild('img01') img01;
+ @ViewChild('caption') caption;
+ @ViewChild('close') close;
 
   constructor(private renderer: Renderer2) { }
 

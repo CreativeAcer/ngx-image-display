@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   exports: [NgximagedisplayComponent]
 })
 export class NgxImageDisplayModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<NgxImageDisplayModule> {
     return {
         ngModule: NgxImageDisplayModule,
     };
