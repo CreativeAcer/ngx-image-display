@@ -230,8 +230,8 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 Run ng g library libname
 
 ### Build npm package  
-from root   
-ng build ngximagedisplay
+from root   (build with --prod to disable Ivy compiler)
+ng build ngximagedisplay --prod
 
 ### publish
 npm login   
