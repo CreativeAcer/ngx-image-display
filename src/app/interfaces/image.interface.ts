@@ -1,4 +1,4 @@
-import { BaseImage } from './BaseImage.interface';
+import { BaseImage } from './baseimage.interface';
 
 export interface ImageData {
     type: 'base64' | 'url';
