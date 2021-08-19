@@ -18,11 +18,12 @@ This project can be used to display images on a page.
 ## Core features  
 ***
 1. Display multiple images in a set amount of columns or filling the available space.   
-2. View selected image in full screen.  
-3. Enable various hover filters.  
-4. Show image text in overlay.  
-5. Responsive Design. 
-6. Support for Image url and base64 input.  
+2. View selected image in full screen. 
+3. Retrieve data with OnSelect function for each seperate image   
+4. Enable various hover filters.  
+5. Show image text in overlay.  
+6. Responsive Design. 
+7. Support for Image url and base64 input.  
 
 
 ### Demo ( open code )  
